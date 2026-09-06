@@ -34,8 +34,8 @@ from rules.models import Finding
 # explicitly below rather than forced into one signature - a handful of
 # rules is not enough to justify a plugin abstraction over a plain list.
 PERSON_RULES = [gender_inconsistency, duplicate_person, ambiguous_famc, name_hygiene]
-FAMILY_RULES = [self_referential_family, duplicate_family]
-PERSON_FAMILY_RULES = [family_back_reference, impossible_dates, missing_married_name]
+FAMILY_RULES = [self_referential_family]
+PERSON_FAMILY_RULES = [family_back_reference, impossible_dates, missing_married_name, duplicate_family]
 ALL_RULE_MODULES = PERSON_RULES + FAMILY_RULES + PERSON_FAMILY_RULES
 
 

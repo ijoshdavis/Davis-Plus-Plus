@@ -1,0 +1,494 @@
+[
+  {
+    "person_id": "fc490444-3cf1-4087-a82a-ce39623e9570",
+    "external_xref": "@I302788161434@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161434@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Alax /Ford/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Alax"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Ford"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "M"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F44@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "ABT 1853"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Tennessee"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1880"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "District 2, Knox, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Self"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836098@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "0700a1ae-f1bb-4f60-b291-233371d5d394",
+    "external_xref": "@I302788161435@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161435@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Emily J. /Ford/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Emily J."
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Ford"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F44@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "ABT 1854"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Tennessee"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1880"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "District 2, Knox, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Wife"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836098@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "faadd9ee-a324-42a3-9ad3-ceb075a25e03",
+    "external_xref": "@I302788161459@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161459@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Alax /Ford/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Alax"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Ford"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "M"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F59@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "ABT 1853"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Tennessee"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1880"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "District 2, Knox, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Self"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836098@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "b9a9f7e2-cb17-4d8c-bee9-951d443f2518",
+    "external_xref": "@I302788161460@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161460@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Emily J. /Ford/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Emily J."
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Ford"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F59@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "ABT 1854"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Tennessee"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1880"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "District 2, Knox, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Wife"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836098@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1880; Census Place: District 2, Knox, Tennessee; Roll: 1265; Family History Film: 1255265; Page: 214B; Enumeration District: 150"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
