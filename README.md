@@ -48,8 +48,17 @@ Ancestry uses a non-standard `_FREL step` tag instead, which neither app
 understands. Not a round-trip bug; became the seed case for M4's
 `ambiguous_famc_pedigree` rule below.
 
-**Still manual/pending:** the same Gramps + RootsMagic checks for
-Ford-Davis-Tree — no tool here can drive either app's UI.
+**M3 is fully confirmed complete, both trees, both tools.** Gramps:
+Ford-Davis-Tree's report looked suspiciously short at first (capped at ~400
+warnings, a Gramps display limit, not a partial import — confirmed via
+Gramps' own "Total people: 1559" count matching exactly). RootsMagic
+(via the `.LST` file it writes to disk, not a popup): zero errors or
+warnings for Ford-Davis-Tree — cleanest result of any file/tool combination
+this milestone, and no `OBJE`-dangling-pointer noise since this tree has no
+media records at all. Every issue found across all four checks this
+milestone traces back to either the known media-record gap, the known
+non-standard `SOUR.DATA` citation structure, or genuine pre-existing
+Ancestry data quirks — nothing traces back to the exporter itself.
 
 **M4 (Rules engine)** — all 6 of the plan's required rules implemented, plus
 3 more found live this session (`rules/checks/`): `gender_inconsistency`,
@@ -74,11 +83,13 @@ three roles via `SET LOCAL request.jwt.claim.sub` + `SET LOCAL ROLE
 authenticated` in a rolled-back transaction: **viewer sees 0 of the 681
 living people**, owner/family see all 3,135. Also added
 `scripts/check-no-service-role-key.sh` + CI (`.github/workflows/ci.yml`) per
-the plan's explicit ask. **Not done, and can't be from here:** enforcing TOTP
-MFA and disabling public signup are Supabase *console* settings, not SQL —
-needs either you or explicit sign-off to attempt via browser automation.
-Storage/signed-URL verification is moot until real media exists (tied to the
-M3 media-record gap).
+the plan's explicit ask. Public signup is now disabled (done by the user
+directly in the Supabase dashboard). MFA enforcement turned out to be a
+restrictive RLS policy, not a console setting as first thought — deferred by
+choice until M6 gives someone an actual reason to enroll TOTP, so it doesn't
+lock out family members before anyone's enrolled anything. Storage/
+signed-URL verification is moot until real media exists (tied to the M3
+media-record gap).
 
 ## Local development
 
