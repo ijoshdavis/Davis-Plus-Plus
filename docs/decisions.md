@@ -176,6 +176,49 @@ expected gap — nothing new:
 M3's Gramps acceptance criterion is met for Davis++, modulo the documented
 media-record gap. Ford-Davis-Tree and RootsMagic still pending.
 
+## 2026-09-06 — M3: Gramps import confirms the round trip (Ford-Davis-Tree)
+
+Same check as Davis++, this time on `export/output/Ford-Davis-Tree.ged`. The
+import report was suspiciously short relative to the 45,810-line file
+(1,200 lines, stopping at source line 2,754) - re-ran it to rule out a
+copy-paste accident, and got a byte-for-byte identical report both times.
+That pointed at Gramps' import dialog capping how many warnings it
+*displays* (~400 `DATE`/`PLAC` pairs) rather than only processing part of
+the file. Confirmed directly: Gramps' own "Top Surnames" dashboard widget
+reports **"Total people: 1559"** - the exact real count for this tree - so
+the full file loaded regardless of the truncated log. Zero errors, zero
+"ignored" lines in what *was* shown; only the same benign `SOUR.DATA`
+`DATE`/`PLAC` quirk seen everywhere else. **M3's Gramps acceptance
+criterion is now met for both trees.**
+
+## 2026-09-06 — M3: RootsMagic confirms the round trip too (Ford-Davis-Tree)
+
+RootsMagic doesn't pop up an import dialog - it writes a `.LST` file to disk
+next to the new database, named after the GEDCOM (`Ford-Davis-Tree.lst`),
+*only* if it hit unfamiliar data. User found and sent it. Its own header
+confirms this was the actual exported file (`Source program: Kinstore,
+Program version: 0.1.0`), not the original.
+
+Cleanest result of any file/tool combination this session: 1,288 "Unknown
+info" entries total (RootsMagic's mildest classification - "here it is, FYI"
+- no "Error"/"Warning"/"Fail" anywhere in the file), covering exactly three
+tags: `DATE` (401), `PLAC` (399), `NOTE` (488) - all the same non-standard
+`SOUR.DATA` citation substructure seen in every other file/tool combination
+this session, just manifesting as `NOTE <url>` here where Davis++ used
+`WWW <url>` for the equivalent citation link (a difference in the *source*
+data's own convention, not something the exporter did). Last flagged line is
+44,811 of 45,657 total - essentially the whole file, not a truncated
+prefix. Zero `OBJE`-related complaints, unlike Davis++, because
+Ford-Davis-Tree has no `OBJE` records to begin with - nothing to dangle.
+
+**M3 is now fully confirmed complete for both trees, in both tools.** Every
+issue found across all four file/tool combinations this milestone traces to
+one of: the known media-record gap (Davis++/Gramps only), the known
+`SOUR.DATA` non-standard citation structure (all four), or genuine
+pre-existing Ancestry data quirks unrelated to the round trip (F468/F469,
+Ronnie Lamar Davis's `_FREL`). Nothing traces back to a defect in
+`export/ancestry_gedcom/write.py` itself.
+
 ## 2026-09-06 — M3: RootsMagic surfaces a real ambiguity (Ronnie Lamar Davis)
 
 User imported `export/output/Davis++.ged` into RootsMagic and noticed Ronnie
@@ -374,12 +417,21 @@ found") - scoped to `api/`/`web/` (request-handling code) since `ingest/`,
 request handlers, and legitimately need elevated DB access.
 
 **Not done, and can't be done from here:**
-- Enforcing TOTP MFA and disabling public signup are Supabase Auth *console*
-  settings, not SQL - no migration can touch them. Needs either the user to
-  do it in the dashboard, or explicit sign-off to attempt it via browser
-  automation (the Supabase MCP connector still can't see this project - see
-  earlier entry).
+- Disabling public signup is a Supabase Auth *console* setting (GoTrue
+  service-level, not Postgres) - no migration can touch it. **Done by the
+  user directly in the dashboard** (Authentication → Sign In / Providers →
+  "Allow new users to sign up" → off, saved) - confirmed via screenshot.
 - Storage/signed-URL verification (media obeys the same tiers) is moot right
   now - M2 never ingested the original file's 11 `OBJE` records, so there is
   no media in Supabase Storage to test against yet. Tied to the same known
   gap noted in M3.
+
+**Correction:** MFA *enforcement* is not actually a console setting - it's a
+restrictive RLS policy on the JWT's `aal` (authenticator assurance level)
+claim (`auth.jwt()->>'aal' = 'aal2'`, optionally scoped to only users with an
+enrolled factor via `auth.mfa_factors`), per Supabase's own documented
+pattern. Initially told the user this needed the dashboard; that was wrong.
+**User decision: defer implementing this policy for now** - revisit once
+there's an actual UI (M6) and someone has a reason to enroll a TOTP factor,
+rather than adding a restrictive policy today that would lock out family
+members before anyone's enrolled anything.
