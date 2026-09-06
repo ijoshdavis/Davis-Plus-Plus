@@ -1,0 +1,98 @@
+[
+  {
+    "person_id": "5ba76f51-f031-47d7-be14-e7376e5e277e",
+    "external_xref": "@I302788162034@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788162034@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Lizzie /Renfroe/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Lizzie"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Renfroe"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836284@"
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F233@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836284@"
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "29ec1793-b3d3-47fa-8247-818bab0389a7",
+    "external_xref": "@I302788162038@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788162038@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Lizzie /Renfroe/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Lizzie"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Renfroe"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836286@"
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F237@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836286@"
+        }
+      ]
+    }
+  }
+]

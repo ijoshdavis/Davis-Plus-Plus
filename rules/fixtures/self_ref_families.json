@@ -1,0 +1,92 @@
+[
+  {
+    "family_persona_id": "f0320fb5-dc09-48ee-ac53-c68aeed5a1b9",
+    "external_xref": "@F468@",
+    "husb_xref": "@I302788162200@",
+    "wife_xref": "@I302788162200@",
+    "chil_xrefs": [],
+    "raw": {
+      "tag": "FAM",
+      "xref": "@F468@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "_SREL",
+          "level": 1,
+          "payload": "unknown"
+        },
+        {
+          "tag": "HUSB",
+          "level": 1,
+          "payload": "@I302788162200@"
+        },
+        {
+          "tag": "WIFE",
+          "level": 1,
+          "payload": "@I302788162200@"
+        },
+        {
+          "tag": "MARR",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "29 JUN 1867"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Jefferson, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836313@"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "family_persona_id": "0a750943-0390-46ec-bb7a-a9023620bed0",
+    "external_xref": "@F469@",
+    "husb_xref": "@I302788162150@",
+    "wife_xref": "@I302788162150@",
+    "chil_xrefs": [],
+    "raw": {
+      "tag": "FAM",
+      "xref": "@F469@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "_SREL",
+          "level": 1,
+          "payload": "unknown"
+        },
+        {
+          "tag": "HUSB",
+          "level": 1,
+          "payload": "@I302788162150@"
+        },
+        {
+          "tag": "WIFE",
+          "level": 1,
+          "payload": "@I302788162150@"
+        },
+        {
+          "tag": "MARR",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1796"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

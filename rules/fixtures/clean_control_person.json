@@ -1,0 +1,383 @@
+[
+  {
+    "person_id": "e3c49b6b-05ce-4046-acec-98a10beac29c",
+    "external_xref": "@I302788161327@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161327@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Joshua Lamar /Davis/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Joshua Lamar"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Davis"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836565@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "\"U.S., School Yearbooks, 1880-2012\"; School Name: Sequoyah High School; Year: 1992"
+                },
+                {
+                  "tag": "DATA",
+                  "level": 3,
+                  "children": [
+                    {
+                      "tag": "WWW",
+                      "level": 4,
+                      "payload": "https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166"
+                    }
+                  ]
+                },
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,1265::37110209"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836749@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Marietta; State: Georgia; Year(s): 2002"
+                },
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,7339::110583353"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836738@",
+              "children": [
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,62209::281616193"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836079@"
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "M"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F154@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F150@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "4 JAN 1977"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Alphareta,"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836565@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "\"U.S., School Yearbooks, 1880-2012\"; School Name: Sequoyah High School; Year: 1992"
+                },
+                {
+                  "tag": "DATA",
+                  "level": 3,
+                  "children": [
+                    {
+                      "tag": "WWW",
+                      "level": 4,
+                      "payload": "https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166"
+                    }
+                  ]
+                },
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,1265::37110209"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836738@",
+              "children": [
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,62209::281616193"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836079@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1983-1999"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Woodstock, GA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836079@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1999-2001"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836738@",
+              "children": [
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,62209::281616193"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "2002-2014"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Marietta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836749@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Marietta; State: Georgia; Year(s): 2002"
+                },
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,7339::110583353"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "2011-2019"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Powder Springs, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836738@",
+              "children": [
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,62209::281616193"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836565@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "\"U.S., School Yearbooks, 1880-2012\"; School Name: Sequoyah High School; Year: 1992"
+            },
+            {
+              "tag": "DATA",
+              "level": 2,
+              "children": [
+                {
+                  "tag": "WWW",
+                  "level": 3,
+                  "payload": "https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166"
+                }
+              ]
+            },
+            {
+              "tag": "_APID",
+              "level": 2,
+              "payload": "1,1265::37110209"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836749@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "City: Marietta; State: Georgia; Year(s): 2002"
+            },
+            {
+              "tag": "_APID",
+              "level": 2,
+              "payload": "1,7339::110583353"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836738@",
+          "children": [
+            {
+              "tag": "_APID",
+              "level": 2,
+              "payload": "1,62209::281616193"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836079@"
+        },
+        {
+          "tag": "OBJE",
+          "level": 1,
+          "payload": "@O1@",
+          "children": [
+            {
+              "tag": "_PRIM",
+              "level": 2,
+              "payload": "Y"
+            },
+            {
+              "tag": "_CROP",
+              "level": 2,
+              "children": [
+                {
+                  "tag": "_LEFT",
+                  "level": 3,
+                  "payload": "74"
+                },
+                {
+                  "tag": "_TOP",
+                  "level": 3,
+                  "payload": "105"
+                },
+                {
+                  "tag": "_WDTH",
+                  "level": 3,
+                  "payload": "297"
+                },
+                {
+                  "tag": "_HGHT",
+                  "level": 3,
+                  "payload": "419"
+                },
+                {
+                  "tag": "_TYPE",
+                  "level": 3,
+                  "payload": "primary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

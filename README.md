@@ -35,23 +35,52 @@ gap: the original file's 11 `OBJE` (media) records were never ingested by M2,
 so they don't round-trip and affected INDI records will have a dangling
 media pointer on import.
 
-**Still manual:** importing `export/output/*.ged` into Gramps and RootsMagic
-to check for import errors/warnings — no tool here can drive either app's UI.
+**Confirmed in Gramps 6.0 (Davis++):** every reported issue maps to an
+already-known gap — 11 dangling media pointers (the un-ingested `OBJE`
+records) and 2 pre-existing family back-reference quirks that also show up
+importing the *original* Ancestry file (proof the relationship data
+round-tripped correctly, not a regression). Zero new/unexpected errors.
 
-**M4 onward** — not started.
+**Confirmed in RootsMagic (Davis++):** surfaced a real, pre-existing data
+ambiguity — Ronnie Lamar Davis has two `FAMC` links (birth father, and his
+mother's household) with no standard `PEDI` to say which is biological.
+Ancestry uses a non-standard `_FREL step` tag instead, which neither app
+understands. Not a round-trip bug; became the seed case for M4's
+`ambiguous_famc_pedigree` rule below.
+
+**Still manual/pending:** the same Gramps + RootsMagic checks for
+Ford-Davis-Tree — no tool here can drive either app's UI.
+
+**M4 (Rules engine)** — all 6 of the plan's required rules implemented, plus
+3 more found live this session (`rules/checks/`): `gender_inconsistency`,
+`duplicate_person`, `name_hygiene`, `missing_married_name`,
+`duplicate_family`, `impossible_dates` (plan-required), and
+`ambiguous_famc_pedigree`, `self_referential_family`, `family_back_reference`
+(found investigating real discrepancies this session — see
+`docs/decisions.md` for what each caught and why). 15 regression tests
+(`rules/test_rules.py`), all passing, nearly all against real fixture data
+pulled straight from the store. Run against both trees in Supabase:
+**342 findings for Davis++, 339 for Ford-Davis-Tree**. One honest gap:
+`duplicate_family` only catches families sharing the exact same two person
+xrefs — zero real hits in either tree, confirmed directly against the store;
+catching the same couple duplicated via two different *person* records would
+need joining against `duplicate_person`'s output, not yet done.
 
 ## Local development
 
 ```sh
 uv sync                       # install Python deps
 docker compose up -d          # local Postgres on :5488
-docker compose exec -T db psql -U postgres -d kinstore < db/migrations/0001_identity_and_evidence.sql
+for f in db/migrations/*.sql; do docker compose exec -T db psql -U postgres -d kinstore < "$f"; done
 
 export DATABASE_URL=postgresql://postgres:kinstore@localhost:5488/kinstore
 uv run python -m ingest.ancestry_gedcom.load \
   "data/raw/ancestry_gedcom/Davis++ (09-05-26).ged" "Davis++" "$DATABASE_URL"
 uv run python -m ingest.ancestry_gedcom.load \
   "data/raw/ancestry_gedcom/Ford-Davis-Tree.ged" "Ford-Davis-Tree" "$DATABASE_URL"
+
+uv run python -m rules.engine "Davis++" "$DATABASE_URL"
+uv run python -m rules.engine "Ford-Davis-Tree" "$DATABASE_URL"
 ```
 
 (No local `psql` needed — everything runs through the container.)

@@ -1,0 +1,84 @@
+[
+  {
+    "person_id": "2cb28e97-1557-4210-9bfe-2b1733d67423",
+    "external_xref": "@I302788161808@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161808@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Hannah /Mason/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Hannah"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Mason"
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F282@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "30 MAY 1680"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Stafford, Stafford, Virginia, United States"
+            }
+          ]
+        },
+        {
+          "tag": "DEAT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1693"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Peumans End Creek, Caroline, Virginia, United States"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836083@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Ancestry Family Tree"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,103 @@
+[
+  {
+    "family_persona_id": "1c6a6f98-3014-426b-99e4-3f8590d148b1",
+    "external_xref": "@F282@",
+    "husb_xref": "@I302788161807@",
+    "wife_xref": "@I302788161808@",
+    "chil_xrefs": [
+      "@I302788161803@",
+      "@I302788161809@",
+      "@I302788161810@",
+      "@I302788161811@",
+      "@I302788161812@",
+      "@I302788161813@",
+      "@I302788161814@",
+      "@I302788161815@",
+      "@I302788161816@",
+      "@I302788161817@"
+    ],
+    "raw": {
+      "tag": "FAM",
+      "xref": "@F282@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "HUSB",
+          "level": 1,
+          "payload": "@I302788161807@"
+        },
+        {
+          "tag": "WIFE",
+          "level": 1,
+          "payload": "@I302788161808@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161803@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161809@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161810@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161811@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161812@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161813@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161814@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161815@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161816@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161817@"
+        },
+        {
+          "tag": "MARR",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1682"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Richmond, Wise, Virginia, United States"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

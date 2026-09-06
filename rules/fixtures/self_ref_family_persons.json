@@ -1,0 +1,95 @@
+[
+  {
+    "person_id": "60266b65-c3a3-423a-8250-60cf98c36bd7",
+    "external_xref": "@I302788162150@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788162150@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "/Mosley/",
+          "children": [
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Mosley"
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "M"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F205@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836083@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Ancestry Family Tree"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "6e3856ac-c02b-4556-92c7-601082cb1697",
+    "external_xref": "@I302788162200@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788162200@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "George W /Mayo/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "George W"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Mayo"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836313@"
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "M"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F195@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836313@"
+        }
+      ]
+    }
+  }
+]

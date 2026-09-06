@@ -1,0 +1,92 @@
+[
+  {
+    "family_persona_id": "9481a526-7107-4d5b-8acb-3b7055d05652",
+    "external_xref": "@F93@",
+    "husb_xref": "@I302788161369@",
+    "wife_xref": "@I302788161329@",
+    "chil_xrefs": [
+      "@I302788161334@",
+      "@I302788161335@",
+      "@I302788161336@",
+      "@I302788161337@",
+      "@I302788161338@",
+      "@I302788161339@",
+      "@I302788161326@"
+    ],
+    "raw": {
+      "tag": "FAM",
+      "xref": "@F93@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "HUSB",
+          "level": 1,
+          "payload": "@I302788161369@"
+        },
+        {
+          "tag": "WIFE",
+          "level": 1,
+          "payload": "@I302788161329@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161334@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161335@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161336@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161337@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161338@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161339@"
+        },
+        {
+          "tag": "CHIL",
+          "level": 1,
+          "payload": "@I302788161326@",
+          "children": [
+            {
+              "tag": "_FREL",
+              "level": 2,
+              "payload": "step"
+            }
+          ]
+        },
+        {
+          "tag": "MARR",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "21 OCT 1933"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Greenville, Meriwether, Georgia, USA"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
