@@ -1,9 +1,13 @@
 """Duplicate family (plan-required): same couple recorded more than once;
 marriage dates within a few days of each other.
 
-The primary signal is exact: two family_persona rows in the same tree naming
-the same two people (by xref) as HUSB/WIFE is already Ancestry recording the
-same couple twice, regardless of what the marriage dates say. Where both
+Groups families by their spouses' *canonical* identity (rules/dedup.py's
+person clusters), not raw xref - so this catches both a literal repeated
+xref pair, and the same couple recorded twice because one or both spouses
+are themselves duplicate person records (e.g. two "Lizzie Renfroe" records
+each married into their own family entry would make those two families a
+duplicate pair too, even though the four xrefs involved are all different).
+This was a known gap when M4 first shipped - see docs/decisions.md. Where
 records do carry a marriage date, "within a few days" is reported as extra
 corroboration in `details`, not as a filter - a couple can be duplicated
 with one of the two records simply missing a date.
@@ -15,7 +19,8 @@ from collections import defaultdict
 from datetime import date
 
 from rules import gedcom_helpers as h
-from rules.models import FamilyRecord, Finding
+from rules.dedup import canonical_xref_map
+from rules.models import FamilyRecord, Finding, PersonRecord
 
 RULE_NAME = "duplicate_family"
 
@@ -42,12 +47,13 @@ def _marriage_date(fam: FamilyRecord) -> date | None:
     return None
 
 
-def run(families: list[FamilyRecord]) -> list[Finding]:
+def run(persons: list[PersonRecord], families: list[FamilyRecord]) -> list[Finding]:
+    canon = canonical_xref_map(persons)
     groups: dict[frozenset[str], list[FamilyRecord]] = defaultdict(list)
     for fam in families:
         if not fam.husb_xref or not fam.wife_xref:
             continue
-        key = frozenset({fam.husb_xref, fam.wife_xref})
+        key = frozenset({canon.get(fam.husb_xref, fam.husb_xref), canon.get(fam.wife_xref, fam.wife_xref)})
         groups[key].append(fam)
 
     findings = []
@@ -63,11 +69,13 @@ def run(families: list[FamilyRecord]) -> list[Finding]:
                 severity="warning",
                 subject={"family_ids": [f.family_persona_id for f in group]},
                 details={
-                    "husb_xref": group[0].husb_xref,
-                    "wife_xref": group[0].wife_xref,
+                    "husb_xrefs": sorted({f.husb_xref for f in group}),
+                    "wife_xrefs": sorted({f.wife_xref for f in group}),
                     "family_xrefs": [f.external_xref for f in group],
                     "marriage_dates": [d.isoformat() if d else None for d in dates],
                     "days_apart": days_apart,
+                    "via_duplicate_person": len({f.husb_xref for f in group}) > 1
+                    or len({f.wife_xref for f in group}) > 1,
                 },
                 suggested_fix=None,
             )

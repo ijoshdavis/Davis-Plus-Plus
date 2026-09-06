@@ -289,6 +289,27 @@ out (191/190 married-name candidates, 42/44 name-hygiene findings) - expected
 per the stale-data findings earlier in this log; real numbers now stand in
 their place as the regression baseline.
 
+## 2026-09-06 — Closed the duplicate_family gap
+
+`duplicate_family` originally grouped by the literal `(husb_xref, wife_xref)`
+pair and found zero real hits - too narrow, since the same couple can be
+duplicated via two different *person* records rather than one repeated
+family record. Extracted the clustering logic from `duplicate_person` into
+`rules/dedup.py` (`canonical_xref_map`) and had `duplicate_family` group
+families by their spouses' canonical cluster instead of raw xref.
+
+Real result: 7 hits in Davis++ (up from 0), 6 in Ford-Davis-Tree, all
+`via_duplicate_person: true` - confirming this was a real, closed gap, not a
+false alarm. Best example: "Alax Ford" + "Emily J. Ford" recorded as a couple
+twice (`@F44@`, `@F59@`) via four entirely different xrefs - both spouses are
+themselves duplicate-person records, so this was unreachable by any xref-based
+matching alone. `duplicate_person` was refactored to use the same shared
+clustering (no behavior change, just deduplicated logic) rather than
+maintaining two copies of the same algorithm.
+
+Full re-run against Supabase, all 9 rules: **349 findings for Davis++, 345
+for Ford-Davis-Tree**. 16 regression tests, all passing.
+
 ## 2026-09-05 — Ingest bug found and fixed: multiple `_APID` per citation
 
 A handful of `SOUR` citations in Davis++ carry more than one `_APID` child

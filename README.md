@@ -57,14 +57,13 @@ Ford-Davis-Tree — no tool here can drive either app's UI.
 `duplicate_family`, `impossible_dates` (plan-required), and
 `ambiguous_famc_pedigree`, `self_referential_family`, `family_back_reference`
 (found investigating real discrepancies this session — see
-`docs/decisions.md` for what each caught and why). 15 regression tests
+`docs/decisions.md` for what each caught and why). 16 regression tests
 (`rules/test_rules.py`), all passing, nearly all against real fixture data
 pulled straight from the store. Run against both trees in Supabase:
-**342 findings for Davis++, 339 for Ford-Davis-Tree**. One honest gap:
-`duplicate_family` only catches families sharing the exact same two person
-xrefs — zero real hits in either tree, confirmed directly against the store;
-catching the same couple duplicated via two different *person* records would
-need joining against `duplicate_person`'s output, not yet done.
+**349 findings for Davis++, 345 for Ford-Davis-Tree**. `duplicate_family`
+groups by canonical person identity (`rules/dedup.py`), not raw xref, so it
+also catches a couple duplicated via two different *person* records (e.g.
+"Alax Ford" + "Emily J. Ford" recorded twice via four different xrefs).
 
 ## Local development
 

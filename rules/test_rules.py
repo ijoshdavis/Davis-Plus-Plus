@@ -123,11 +123,22 @@ def test_missing_married_name_catches_mamie_stover():
     assert "@I302788161369@" not in xrefs  # Johnnie Jefferson Davis is male, not a candidate
 
 
-def test_duplicate_family_finds_no_exact_xref_duplicates_in_real_data():
-    # No real specimen exists in either tree for this narrow (exact husb/wife
-    # xref pair repeated) definition - verified directly against the store.
-    # This just proves the grouping logic doesn't false-positive on distinct
-    # couples that happen to share one spouse.
+def test_duplicate_family_catches_alax_and_emily_ford():
+    # Alax Ford + Emily J. Ford are recorded as a couple twice (@F44@, @F59@)
+    # via two entirely different xrefs on *both* sides - only catchable by
+    # canonical person clustering, not a raw husb/wife xref match. This was
+    # a known gap (zero hits) when M4 first shipped - see docs/decisions.md.
+    persons = load_persons("alax_emily_ford_persons.json")
+    families = load_families("alax_emily_ford_families.json")
+    findings = duplicate_family.run(persons, families)
+    assert len(findings) == 1
+    assert findings[0].details["via_duplicate_person"] is True
+    assert set(findings[0].details["family_xrefs"]) == {"@F44@", "@F59@"}
+
+
+def test_duplicate_family_ignores_distinct_couples_sharing_one_spouse():
+    # Two different families that happen to share one spouse (e.g. a second
+    # marriage) must not be flagged as the same couple duplicated.
     shared_spouse = load_families("mamie_stover_family.json")[0]
     other = FamilyRecord(
         family_persona_id="synthetic-1",
@@ -137,7 +148,8 @@ def test_duplicate_family_finds_no_exact_xref_duplicates_in_real_data():
         chil_xrefs=[],
         raw={"level": 0, "tag": "FAM", "xref": "@F_SYNTHETIC@", "children": []},
     )
-    assert duplicate_family.run([shared_spouse, other]) == []
+    persons = load_persons("mamie_stover_family_persons.json")
+    assert duplicate_family.run(persons, [shared_spouse, other]) == []
 
 
 def test_name_hygiene_catches_davis_specimens():
