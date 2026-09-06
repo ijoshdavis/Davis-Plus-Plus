@@ -322,3 +322,64 @@ and emitting one citation row per `_APID`. `load()` now asserts the loaded
 future regression fails loudly instead of silently — this was exactly the
 "lossy parser silently eats these" risk the build plan calls out in §0 and §7,
 just manifesting in adapter code rather than the parsing library.
+
+## 2026-09-06 — M5: schema + RLS, first pass
+
+Migration `0004_privacy_and_roles.sql` adds `app_user_role` (owner/family/
+viewer) and `person_privacy` (`is_living`, manual override, visibility
+tier), plus RLS on `person`, `persona`, `family_persona` (owner/family see
+everything; viewer sees only where `is_person_living()` is false) and
+`finding` (owner/family only - it's a curation tool, not public-facing, so
+viewer gets no access at all rather than a filtered view).
+
+`is_living` is computed in `core/privacy.py`, not a generated column - birth/
+death years live inside `persona.raw` jsonb, and a person can have personas
+across multiple trees, so it's the same kind of derived-from-personas logic
+as the rules engine. Definition per the plan: no death date recorded, AND
+(birth year unknown OR born less than `LIVING_CUTOFF_YEARS`=100 years ago).
+Unknown birth year defaults to "living" (hidden from viewer) - conservative
+on purpose, matching the SQL fallback in `is_person_living()` for people with
+no `person_privacy` row yet.
+
+Two lessons repeated from earlier in this log:
+- **Row-by-row writes don't scale to Supabase again.** `core/privacy.py`'s
+  first version did one `INSERT ... ON CONFLICT` per person (3,135 of them)
+  and hit the same wall the ingest loader did in M2 - fine locally, times out
+  against the real project. Fixed the same way: stage into a temp table via
+  `COPY`, then one bulk `INSERT ... SELECT ... ON CONFLICT`.
+- **Local Postgres isn't Supabase.** Plain `docker-compose` Postgres has no
+  `auth` schema, no `auth.uid()`, and no `authenticated`/`anon` roles - all
+  Supabase-specific. Added `db/local_dev_auth_shim.sql` (never run against
+  Supabase, which already has the real thing) so RLS policies can be
+  developed and tested locally before touching the live project.
+
+**RLS verified with real queries, not just policy syntax** - the plan's own
+bar ("verified by direct SQL against the API, not just through the UI").
+Created three throwaway `auth.users` + `app_user_role` rows, used
+`SET LOCAL request.jwt.claim.sub` + `SET LOCAL ROLE authenticated` to
+simulate each role exactly as PostgREST would, ran queries, then rolled the
+whole transaction back - confirmed zero rows persisted afterward. Results
+against the real Supabase data: owner and family both see all 3,135 people
+(681 living); **viewer sees 2,454 people and zero living ones** - and
+spot-checked that a viewer's query for Joshua Lamar Davis's `persona` (born
+1977, presumably living) returns nothing, while owner sees his name. This
+tests the policy logic directly, not through PostgREST/HTTP - a good-enough
+proxy for now, not a substitute for an eventual end-to-end test with a real
+JWT once `api/`/`web/` exist.
+
+Also added `scripts/check-no-service-role-key.sh` + `.github/workflows/ci.yml`
+per the plan's explicit ask ("grep for it in CI and fail the build if
+found") - scoped to `api/`/`web/` (request-handling code) since `ingest/`,
+`rules/`, `export/`, `core/` are trusted backend jobs run by the owner, not
+request handlers, and legitimately need elevated DB access.
+
+**Not done, and can't be done from here:**
+- Enforcing TOTP MFA and disabling public signup are Supabase Auth *console*
+  settings, not SQL - no migration can touch them. Needs either the user to
+  do it in the dashboard, or explicit sign-off to attempt it via browser
+  automation (the Supabase MCP connector still can't see this project - see
+  earlier entry).
+- Storage/signed-URL verification (media obeys the same tiers) is moot right
+  now - M2 never ingested the original file's 11 `OBJE` records, so there is
+  no media in Supabase Storage to test against yet. Tied to the same known
+  gap noted in M3.

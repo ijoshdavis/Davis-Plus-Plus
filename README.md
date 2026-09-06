@@ -65,11 +65,27 @@ groups by canonical person identity (`rules/dedup.py`), not raw xref, so it
 also catches a couple duplicated via two different *person* records (e.g.
 "Alax Ford" + "Emily J. Ford" recorded twice via four different xrefs).
 
+**M5 (Auth, RLS, storage)** — schema/RLS half done and verified with real
+queries against Supabase (not just policy syntax): `app_user_role` +
+`person_privacy` (`core/privacy.py` computes `is_living`), RLS on `person`/
+`persona`/`family_persona` (owner+family see everyone; viewer sees only the
+deceased) and `finding` (owner+family only, no viewer access). Simulated all
+three roles via `SET LOCAL request.jwt.claim.sub` + `SET LOCAL ROLE
+authenticated` in a rolled-back transaction: **viewer sees 0 of the 681
+living people**, owner/family see all 3,135. Also added
+`scripts/check-no-service-role-key.sh` + CI (`.github/workflows/ci.yml`) per
+the plan's explicit ask. **Not done, and can't be from here:** enforcing TOTP
+MFA and disabling public signup are Supabase *console* settings, not SQL —
+needs either you or explicit sign-off to attempt via browser automation.
+Storage/signed-URL verification is moot until real media exists (tied to the
+M3 media-record gap).
+
 ## Local development
 
 ```sh
 uv sync                       # install Python deps
 docker compose up -d          # local Postgres on :5488
+docker compose exec -T db psql -U postgres -d kinstore < db/local_dev_auth_shim.sql  # Supabase auth/roles stand-in - local only, never run this against Supabase
 for f in db/migrations/*.sql; do docker compose exec -T db psql -U postgres -d kinstore < "$f"; done
 
 export DATABASE_URL=postgresql://postgres:kinstore@localhost:5488/kinstore
@@ -80,6 +96,8 @@ uv run python -m ingest.ancestry_gedcom.load \
 
 uv run python -m rules.engine "Davis++" "$DATABASE_URL"
 uv run python -m rules.engine "Ford-Davis-Tree" "$DATABASE_URL"
+
+uv run python -m core.privacy "$DATABASE_URL"
 ```
 
 (No local `psql` needed — everything runs through the container.)
