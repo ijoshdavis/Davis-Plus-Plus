@@ -1,0 +1,12 @@
+[project]
+name = "kinstore"
+version = "0.1.0"
+description = "Local-first genealogy system. Postgres holds the truth; Ancestry is one upstream source among many."
+requires-python = ">=3.12"
+dependencies = [
+    "gedcom-lite>=0.2.0",
+    "psycopg[binary]>=3.2",
+]
+
+[tool.uv]
+package = false
