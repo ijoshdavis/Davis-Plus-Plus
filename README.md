@@ -51,15 +51,20 @@ understands. Not a round-trip bug; became the seed case for M4's
 **Still manual/pending:** the same Gramps + RootsMagic checks for
 Ford-Davis-Tree — no tool here can drive either app's UI.
 
-**M4 (Rules engine)** — first pass: 5 rules implemented (`rules/checks/`),
-unit-tested against real fixtures pulled from the data (`rules/test_rules.py`,
-8 passing), and run against both trees in Supabase — 91 findings for Davis++,
-86 for Ford-Davis-Tree. Two of the plan's required rules are done
-(`gender_inconsistency`, `duplicate_person`); three more were found live this
-session and aren't in the plan (`ambiguous_famc_pedigree`,
-`self_referential_family`, `family_back_reference`) — see `docs/decisions.md`
-for what each one caught and why. **Still needed** for full M4 compliance:
-name hygiene, missing married name, duplicate family, impossible dates.
+**M4 (Rules engine)** — all 6 of the plan's required rules implemented, plus
+3 more found live this session (`rules/checks/`): `gender_inconsistency`,
+`duplicate_person`, `name_hygiene`, `missing_married_name`,
+`duplicate_family`, `impossible_dates` (plan-required), and
+`ambiguous_famc_pedigree`, `self_referential_family`, `family_back_reference`
+(found investigating real discrepancies this session — see
+`docs/decisions.md` for what each caught and why). 15 regression tests
+(`rules/test_rules.py`), all passing, nearly all against real fixture data
+pulled straight from the store. Run against both trees in Supabase:
+**342 findings for Davis++, 339 for Ford-Davis-Tree**. One honest gap:
+`duplicate_family` only catches families sharing the exact same two person
+xrefs — zero real hits in either tree, confirmed directly against the store;
+catching the same couple duplicated via two different *person* records would
+need joining against `duplicate_person`'s output, not yet done.
 
 ## Local development
 

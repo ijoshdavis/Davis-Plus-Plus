@@ -1,0 +1,1522 @@
+[
+  {
+    "person_id": "f5ce2dca-9d66-4cc5-9d0c-13907c85bcec",
+    "external_xref": "@I302788161329@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161329@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Mamie Pauline /Stover/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Mamie Pauline"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Stover"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128837187@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "National Archives at Washington, DC; Washington, D.C.; Seventeenth Census of the United States, 1950; Year: 1950; Census Place: Marietta, Cobb, Georgia; Roll: 3225; Page: 19; Enumeration District: 33-17"
+                },
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,62308::124062935"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836091@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836107@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Number: 252-18-1959; Issue State: Georgia; Issue Date: Before 1951"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836110@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1930; Census Place: Manchester, Meriwether, Georgia; Roll: 375; Page: 12A; Enumeration District: 0021; Image: 841.0; FHL microfilm: 2340110"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836184@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Gill, Meriwether, Georgia; Roll: T625_269; Page: 26A; Enumeration District: 92; Image: 474"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836233@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Georgia Department of Health and Vital Statistics; Atlanta, Georgia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F90@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F93@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "19 DEC 1914"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": ", Polk, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128837187@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "National Archives at Washington, DC; Washington, D.C.; Seventeenth Census of the United States, 1950; Year: 1950; Census Place: Marietta, Cobb, Georgia; Roll: 3225; Page: 19; Enumeration District: 33-17"
+                },
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,62308::124062935"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836091@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836107@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Number: 252-18-1959; Issue State: Georgia; Issue Date: Before 1951"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836110@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1930; Census Place: Manchester, Meriwether, Georgia; Roll: 375; Page: 12A; Enumeration District: 0021; Image: 841.0; FHL microfilm: 2340110"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836184@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Gill, Meriwether, Georgia; Roll: T625_269; Page: 26A; Enumeration District: 92; Image: 474"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1920"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta Ward 6, Fulton, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836184@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Gill, Meriwether, Georgia; Roll: T625_269; Page: 26A; Enumeration District: 92; Image: 474"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Single; Relation to Head of House: Lodger"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1930"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Manchester, Meriwether, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836110@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1930; Census Place: Manchester, Meriwether, Georgia; Roll: 375; Page: 12A; Enumeration District: 0021; Image: 841.0; FHL microfilm: 2340110"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Single; Relation to Head of House: Daughter"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1935"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Manchester, Meriwether, Georgia"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1937"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1 APR 1940"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Fulton, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Son-in-law"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1941"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1945"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1950"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Marietta, Cobb, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128837187@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "National Archives at Washington, DC; Washington, D.C.; Seventeenth Census of the United States, 1950; Year: 1950; Census Place: Marietta, Cobb, Georgia; Roll: 3225; Page: 19; Enumeration District: 33-17"
+                },
+                {
+                  "tag": "_APID",
+                  "level": 3,
+                  "payload": "1,62308::124062935"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Occupation: Card Room Worker; Relation to Head of House: Wife; Marital Status: Married"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1953"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1957"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1960"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "EVEN",
+          "level": 1,
+          "children": [
+            {
+              "tag": "TYPE",
+              "level": 2,
+              "payload": "Mamie Pauline Stover Davis"
+            },
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "15 JAN 1999"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Doraville, DeKalb County, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836324@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Mamie Pauline Stover Davis 15 Jan 1999"
+                },
+                {
+                  "tag": "DATA",
+                  "level": 3,
+                  "children": [
+                    {
+                      "tag": "WWW",
+                      "level": 4,
+                      "payload": "https://www.findagrave.com/memorial/198187940/mamie-pauline-davis"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Manchester, Meriwether, Georgia"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "DEAT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "15 JAN 1999"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Lilburn, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836091@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836107@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Number: 252-18-1959; Issue State: Georgia; Issue Date: Before 1951"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "She was buried at Laurelwood Gardens (North Atlanta Memorial Park and Chapel Mausoleum) 5188 Winters Chapel Road",
+              "children": [
+                {
+                  "tag": "CONT",
+                  "level": 3,
+                  "payload": "Doraville, DeKalb County, Georgia, 30360 USA"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128837187@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "National Archives at Washington, DC; Washington, D.C.; Seventeenth Census of the United States, 1950; Year: 1950; Census Place: Marietta, Cobb, Georgia; Roll: 3225; Page: 19; Enumeration District: 33-17"
+            },
+            {
+              "tag": "_APID",
+              "level": 2,
+              "payload": "1,62308::124062935"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836083@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Ancestry Family Tree"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836091@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836107@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Number: 252-18-1959; Issue State: Georgia; Issue Date: Before 1951"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836110@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1930; Census Place: Manchester, Meriwether, Georgia; Roll: 375; Page: 12A; Enumeration District: 0021; Image: 841.0; FHL microfilm: 2340110"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836113@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836166@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836184@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1920; Census Place: Gill, Meriwether, Georgia; Roll: T625_269; Page: 26A; Enumeration District: 92; Image: 474"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836233@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Georgia Department of Health and Vital Statistics; Atlanta, Georgia"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836324@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Mamie Pauline Stover Davis 15 Jan 1999"
+            },
+            {
+              "tag": "DATA",
+              "level": 2,
+              "children": [
+                {
+                  "tag": "WWW",
+                  "level": 3,
+                  "payload": "https://www.findagrave.com/memorial/198187940/mamie-pauline-davis"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "c559614d-2508-4c3a-bea8-c6c6951066f9",
+    "external_xref": "@I302788161369@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161369@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Johnnie Jefferson /Davis/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Johnnie Jefferson"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Davis"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836091@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836107@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Number: 256-18-4364; Issue State: Georgia; Issue Date: Before 1951"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836110@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1930; Census Place: Militia District 19, Bryan, Georgia; Roll: 340; Page: 9B; Enumeration District: 0002; Image: 1040.0; FHL microfilm: 2340075"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836184@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Willie, Liberty, Georgia; Roll: T625_266; Page: 19B; Enumeration District: 128; Image: 755"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836188@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Certificate Number: 045702"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836214@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836233@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Georgia Department of Health and Vital Statistics; Atlanta, Georgia"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836318@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "The National Archives at Fort Worth, Texas; Fort Worth, Texas; WWII Draft Registration Cards for Georgia, 10/16/1940 - 03/31/1947; Record Group: Records of the Selective Service System, 147"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "M"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F389@"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F390@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F93@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "23 JUL 1914"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Savannah, Chatham, Georgia, United States"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836091@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836107@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Number: 256-18-4364; Issue State: Georgia; Issue Date: Before 1951"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836110@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1930; Census Place: Militia District 19, Bryan, Georgia; Roll: 340; Page: 9B; Enumeration District: 0002; Image: 1040.0; FHL microfilm: 2340075"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836184@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Willie, Liberty, Georgia; Roll: T625_266; Page: 19B; Enumeration District: 128; Image: 755"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836188@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Certificate Number: 045702"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836214@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836318@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "The National Archives at Fort Worth, Texas; Fort Worth, Texas; WWII Draft Registration Cards for Georgia, 10/16/1940 - 03/31/1947; Record Group: Records of the Selective Service System, 147"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1920"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Willie, Liberty, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836184@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Willie, Liberty, Georgia; Roll: T625_266; Page: 19B; Enumeration District: 128; Image: 755"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Single; Relation to Head of House: Son"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1930"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Militia District 19, Bryan, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836110@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1930; Census Place: Militia District 19, Bryan, Georgia; Roll: 340; Page: 9B; Enumeration District: 0002; Image: 1040.0; FHL microfilm: 2340075"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Single; Relation to Head of House: Stepson"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1935"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Manchester, Meriwether, Georgia"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1937"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1 APR 1940"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Fulton, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Daughter"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1941"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1945"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "13 FEB 1954"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Cobb, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836214@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1957"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1960"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836166@"
+            }
+          ]
+        },
+        {
+          "tag": "EVEN",
+          "level": 1,
+          "children": [
+            {
+              "tag": "TYPE",
+              "level": 2,
+              "payload": "John Jefferson Davis"
+            },
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "10 DEC 1988"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Doraville, DeKalb County, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836325@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "John Jefferson Davis 10 Dec 1988"
+                },
+                {
+                  "tag": "DATA",
+                  "level": 3,
+                  "children": [
+                    {
+                      "tag": "WWW",
+                      "level": 4,
+                      "payload": "https://www.findagrave.com/memorial/198188061/john-jefferson-davis"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "DeKalb"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836188@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Certificate Number: 045702"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Manchester, Meriwether, Georgia"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836113@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "DEAT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "10 DEC 1988"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Tucker, De Kalb, Georgia, United States"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836091@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836107@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Number: 256-18-4364; Issue State: Georgia; Issue Date: Before 1951"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836188@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Certificate Number: 045702"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "He was buried at Laurelwood Gardens (North Atlanta Memorial Park and Chapel Mausoleum) 5188 Winters Chapel Road",
+              "children": [
+                {
+                  "tag": "CONT",
+                  "level": 3,
+                  "payload": "Doraville, DeKalb County, Georgia, 30360 USA"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836083@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Ancestry Family Tree"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836091@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836107@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Number: 256-18-4364; Issue State: Georgia; Issue Date: Before 1951"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836110@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1930; Census Place: Militia District 19, Bryan, Georgia; Roll: 340; Page: 9B; Enumeration District: 0002; Image: 1040.0; FHL microfilm: 2340075"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836113@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1940; Census Place: Atlanta, Fulton, Georgia; Roll: T627_728; Page: 5A; Enumeration District: 160-81"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836166@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836184@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1920; Census Place: Willie, Liberty, Georgia; Roll: T625_266; Page: 19B; Enumeration District: 128; Image: 755"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836188@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Certificate Number: 045702"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836214@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836233@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Georgia Department of Health and Vital Statistics; Atlanta, Georgia"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836318@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "The National Archives at Fort Worth, Texas; Fort Worth, Texas; WWII Draft Registration Cards for Georgia, 10/16/1940 - 03/31/1947; Record Group: Records of the Selective Service System, 147"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836325@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "John Jefferson Davis 10 Dec 1988"
+            },
+            {
+              "tag": "DATA",
+              "level": 2,
+              "children": [
+                {
+                  "tag": "WWW",
+                  "level": 3,
+                  "payload": "https://www.findagrave.com/memorial/198188061/john-jefferson-davis"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

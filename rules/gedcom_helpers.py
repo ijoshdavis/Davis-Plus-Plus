@@ -43,6 +43,10 @@ def death_year(raw: dict) -> int | None:
     return _event_year(raw, "DEAT")
 
 
+def marriage_year(family_raw: dict) -> int | None:
+    return _event_year(family_raw, "MARR")
+
+
 def _event_year(raw: dict, tag: str) -> int | None:
     event = find_child(raw, tag)
     if not event:

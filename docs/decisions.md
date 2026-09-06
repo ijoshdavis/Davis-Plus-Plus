@@ -241,6 +241,54 @@ target numbers for these (145 married names, 25 damaged names) are subject
 to the same stale-data caveat as the 11,174 `_APID` figure - real numbers
 from the real store will replace them once built.
 
+## 2026-09-06 — M4: remaining four required rules
+
+Added the last four rules from the plan's minimum list, all verified against
+real specimens found in one or the other tree (not synthetic):
+
+- **`name_hygiene`** — five sub-checks (`kind` in `details`), each with a
+  confirmed real hit: `parenthetical_in_surname` ("Alice Jane /(Hardin)
+  Aaron/", the plan's own example, `@I302788161946@`),
+  `research_annotation_in_surname` ("Bolton(4GGF)", "McWhorter 3rd ggf"),
+  `suffix_in_surname` ("Smith Jr.", "Edney Sr"), `unbalanced_quotes`, and
+  `empty_surname`. The last two don't exist in Davis++ but do in
+  Ford-Davis-Tree: `Evelyn Irene "Eva" Evie" /Young/` (`@I34039528489@`,
+  three quote chars - the plan's own "Evelyn Irene" example, just from the
+  older tree) and `Susannah //` (`@I_CL016@`) - whose own NOTE says
+  `[Added by Claude research, 3 Sep 2026] ... maiden name unknown`, i.e. a
+  prior AI-assisted research pass already flagged this one manually. Good
+  confirmation that the rule is finding real gaps, not noise.
+- **`missing_married_name`** — no explicit birth/married name typing exists
+  in this data, so the signal is: a documented marriage (`FAMS` with `MARR`)
+  but every `NAME` record on file shares one surname. Scored 0-4 per the
+  plan's own criteria (born >1850, died >1935, marriage documented, has any
+  source). Mamie Pauline Stover (Ronnie Lamar Davis's mother, `@F93@` from
+  earlier) is a top-scored hit - fittingly, since her married-name situation
+  is exactly what's ambiguous in that whole case.
+- **`duplicate_family`** — groups families by the unordered `{husb_xref,
+  wife_xref}` pair; >1 family per pair is the finding, marriage-date
+  proximity reported as corroboration, not a filter. **Zero real hits in
+  either tree** - confirmed directly against the store (no repeated exact
+  xref-pair exists). This is a narrower definition than "the same real
+  couple duplicated via two different *person* records" (which would need
+  joining against `duplicate_person`'s output) - noted as a gap, not
+  papered over. Regression test uses a synthetic second family for the
+  negative case since no real positive specimen exists.
+- **`impossible_dates`** — three `kind`s: `death_before_birth`,
+  `marriage_before_min_age` (<12), `child_before_parent`. Spot-checked
+  the marriage-age findings; several are marriages at ages 2, 8, 9, 10 -
+  clearly bad records, not edge cases. 18-19 findings per tree.
+
+Full run against Supabase, all 9 rules: **342 findings for Davis++, 339 for
+Ford-Davis-Tree**. 15 regression tests total, all against real fixture data
+except the one noted synthetic case, all passing.
+
+**M4's plan-required rule list is now fully implemented.** The plan's own
+target figures (145 married names, 25 damaged names) don't match what came
+out (191/190 married-name candidates, 42/44 name-hygiene findings) - expected
+per the stale-data findings earlier in this log; real numbers now stand in
+their place as the regression baseline.
+
 ## 2026-09-05 — Ingest bug found and fixed: multiple `_APID` per citation
 
 A handful of `SOUR` citations in Davis++ carry more than one `_APID` child

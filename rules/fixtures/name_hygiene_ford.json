@@ -1,0 +1,960 @@
+[
+  {
+    "person_id": "1ec5ba86-a15c-401f-9e1e-71178b8216d6",
+    "external_xref": "@I34039528489@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I34039528489@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Evelyn Irene \"Eva\" Evie\" /Young/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Evelyn Irene \"Eva\" Evie\""
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Young"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676193863@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203363@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Chattanooga, Hamilton, Tennessee; Roll: T627_3952; Page: 8A; Enumeration District: 96-50"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S401817072@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S429106098@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203487@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Number: 412-10-5884; Issue State: Tennessee; Issue Date: Before 1951"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S406362479@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Cedartown, Polk, Georgia; Roll: T625_274; Page: 7A; Enumeration District: 163; Image: 802"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203407@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1930; Census Place: Chattanooga, Hamilton, Tennessee; Roll: 2252; Page: 7A; Enumeration District: 0049; Image: 217.0; FHL microfilm: 2341986"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S428733785@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Union Point; State: Georgia; Year(s): 1995-1996"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676204617@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1900; Census Place: Pasadena Precinct 4, Los Angeles, California; Roll: 91; Page: 8B; Enumeration District: 0116; FHL microfilm: 1240091"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676205604@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1910; Census Place: Forsyth, Monroe, Georgia; Roll: T624_200; Page: 25B; Enumeration District: 0093; FHL microfilm: 1374213"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203473@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676204755@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676207549@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S428745922@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S442369128@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "The Evening Review; Publication Date: 11/ Jul/ 1957; Publication Place: East Liverpool, Ohio, United States of America; URL: ",
+                  "children": [
+                    {
+                      "tag": "CONC",
+                      "level": 4,
+                      "payload": "https://www.newspapers.com/image/62172839/?article=2390ff6e-1513-451b-b556-e065f1021210&focus=0.26360404,0.1198352,0.38246495,0.281"
+                    }
+                  ]
+                },
+                {
+                  "tag": "DATA",
+                  "level": 3,
+                  "children": [
+                    {
+                      "tag": "NOTE",
+                      "level": 4,
+                      "payload": "https://www.newspapers.com/image/62172839/?article=2390ff6e-1513-451b-b556-e065f1021210&focus=0.26360404,0.1198352,0.38246495,0.28178892&xid=2378"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S442369128@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "The Tennessean; Publication Date: 6/ Apr/ 1994; Publication Place: Nashville, Tennessee, United States of America; URL: ",
+                  "children": [
+                    {
+                      "tag": "CONC",
+                      "level": 4,
+                      "payload": "https://www.newspapers.com/image/112534443/?article=65b194b7-2ce8-4dfa-9a5a-e850ad44249a&focus=0.49629542,0.3884099,0.6544944,0.5022579&"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F372@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F25@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F139@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F138@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "11 JUN 1908"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Cedartown, Polk County, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203363@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Chattanooga, Hamilton, Tennessee; Roll: T627_3952; Page: 8A; Enumeration District: 96-50"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203487@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Number: 412-10-5884; Issue State: Tennessee; Issue Date: Before 1951"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S406362479@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Cedartown, Polk, Georgia; Roll: T625_274; Page: 7A; Enumeration District: 163; Image: 802"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203407@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1930; Census Place: Chattanooga, Hamilton, Tennessee; Roll: 2252; Page: 7A; Enumeration District: 0049; Image: 217.0; FHL microfilm: 2341986"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676204617@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1900; Census Place: Pasadena Precinct 4, Los Angeles, California; Roll: 91; Page: 8B; Enumeration District: 0116; FHL microfilm: 1240091"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676205604@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1910; Census Place: Forsyth, Monroe, Georgia; Roll: T624_200; Page: 25B; Enumeration District: 0093; FHL microfilm: 1374213"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676204755@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676207549@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1910"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Forsyth, Monroe, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676205604@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1910; Census Place: Forsyth, Monroe, Georgia; Roll: T624_200; Page: 25B; Enumeration District: 0093; FHL microfilm: 1374213"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Single; Relation to Head of House: Daughter"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1920"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Cedartown, Polk, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S406362479@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Cedartown, Polk, Georgia; Roll: T625_274; Page: 7A; Enumeration District: 163; Image: 802"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Single; Relation to Head of House: Daughter"
+            }
+          ]
+        },
+        {
+          "tag": "EVEN",
+          "level": 1,
+          "children": [
+            {
+              "tag": "TYPE",
+              "level": 2,
+              "payload": "Marriage License"
+            },
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "20 NOV 1925"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Chattanooga, Tennessee"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S484848996@",
+              "children": [
+                {
+                  "tag": "DATA",
+                  "level": 3,
+                  "children": [
+                    {
+                      "tag": "NOTE",
+                      "level": 4,
+                      "payload": "https://www.newspapers.com/clip/112066004/chattanooga-daily-times/?xid=637"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1930"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Chattanooga, Hamilton, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203407@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1930; Census Place: Chattanooga, Hamilton, Tennessee; Roll: 2252; Page: 7A; Enumeration District: 0049; Image: 217.0; FHL microfilm: 2341986"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Wife"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1935"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Chattanooga, Hamilton, Tennessee"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203363@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Chattanooga, Hamilton, Tennessee; Roll: T627_3952; Page: 8A; Enumeration District: 96-50"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S429106098@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1 APR 1940"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Chattanooga, Hamilton, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203363@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1940; Census Place: Chattanooga, Hamilton, Tennessee; Roll: T627_3952; Page: 8A; Enumeration District: 96-50"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Wife"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1949"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Columbia, South Carolina, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S401817072@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1950"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Marietta, Cobb, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S484849134@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "United States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group ",
+                  "children": [
+                    {
+                      "tag": "CONC",
+                      "level": 4,
+                      "payload": "Number: 29; Residence Date: 1950; Home in 1950: Marietta, Cobb, Geor"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1992"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Union Point, GA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676193863@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "BET 1995 AND 1996"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Union Point, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S428733785@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Union Point; State: Georgia; Year(s): 1995-1996"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "DEAT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "24 SEP 1999"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Parkersburg, Wood County, West Virginia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203487@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Number: 412-10-5884; Issue State: Tennessee; Issue Date: Before 1951"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676204755@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676207549@"
+            }
+          ]
+        },
+        {
+          "tag": "BURI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Parkersburg, Wood County, West Virginia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676203473@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S_676204755@"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676213962@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Ancestry Family Tree"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676193863@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676203363@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1940; Census Place: Chattanooga, Hamilton, Tennessee; Roll: T627_3952; Page: 8A; Enumeration District: 96-50"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S401817072@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S429106098@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676203487@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Number: 412-10-5884; Issue State: Tennessee; Issue Date: Before 1951"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S406362479@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1920; Census Place: Cedartown, Polk, Georgia; Roll: T625_274; Page: 7A; Enumeration District: 163; Image: 802"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676203407@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1930; Census Place: Chattanooga, Hamilton, Tennessee; Roll: 2252; Page: 7A; Enumeration District: 0049; Image: 217.0; FHL microfilm: 2341986"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S428733785@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "City: Union Point; State: Georgia; Year(s): 1995-1996"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676204617@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1900; Census Place: Pasadena Precinct 4, Los Angeles, California; Roll: 91; Page: 8B; Enumeration District: 0116; FHL microfilm: 1240091"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676205604@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1910; Census Place: Forsyth, Monroe, Georgia; Roll: T624_200; Page: 25B; Enumeration District: 0093; FHL microfilm: 1374213"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676203473@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676204755@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_676207549@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S428745922@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S442369128@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "The Evening Review; Publication Date: 11/ Jul/ 1957; Publication Place: East Liverpool, Ohio, United States of America; URL: ",
+              "children": [
+                {
+                  "tag": "CONC",
+                  "level": 3,
+                  "payload": "https://www.newspapers.com/image/62172839/?article=2390ff6e-1513-451b-b556-e065f1021210&focus=0.26360404,0.1198352,0.38246495,0.281"
+                }
+              ]
+            },
+            {
+              "tag": "DATA",
+              "level": 2,
+              "children": [
+                {
+                  "tag": "NOTE",
+                  "level": 3,
+                  "payload": "https://www.newspapers.com/image/62172839/?article=2390ff6e-1513-451b-b556-e065f1021210&focus=0.26360404,0.1198352,0.38246495,0.28178892&xid=2378"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S442369128@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "The Tennessean; Publication Date: 6/ Apr/ 1994; Publication Place: Nashville, Tennessee, United States of America; URL: ",
+              "children": [
+                {
+                  "tag": "CONC",
+                  "level": 3,
+                  "payload": "https://www.newspapers.com/image/112534443/?article=65b194b7-2ce8-4dfa-9a5a-e850ad44249a&focus=0.49629542,0.3884099,0.6544944,0.5022579&"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S484849134@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "United States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group ",
+              "children": [
+                {
+                  "tag": "CONC",
+                  "level": 3,
+                  "payload": "Number: 29; Residence Date: 1950; Home in 1950: Marietta, Cobb, Geor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S484848996@",
+          "children": [
+            {
+              "tag": "DATA",
+              "level": 2,
+              "children": [
+                {
+                  "tag": "NOTE",
+                  "level": 3,
+                  "payload": "https://www.newspapers.com/clip/112066004/chattanooga-daily-times/?xid=637"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "b1c5c2ca-09fc-49b9-9a78-baa39e39b33b",
+    "external_xref": "@I_CL016@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I_CL016@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Susannah //",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Susannah"
+            },
+            {
+              "tag": "SURN",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S_CL001@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Memorial 97612853, biography"
+            }
+          ]
+        },
+        {
+          "tag": "NOTE",
+          "level": 1,
+          "payload": "[Added by Claude research, 3 Sep 2026] Wife of Charles Terrell Hulsey; maiden name unknown (Find a Grave memorial 97612853)."
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F_CL005@"
+        }
+      ]
+    }
+  }
+]

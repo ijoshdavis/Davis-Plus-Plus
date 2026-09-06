@@ -19,9 +19,13 @@ from psycopg.types.json import Jsonb
 from rules import store
 from rules.checks import (
     ambiguous_famc,
+    duplicate_family,
     duplicate_person,
     family_back_reference,
     gender_inconsistency,
+    impossible_dates,
+    missing_married_name,
+    name_hygiene,
     self_referential_family,
 )
 from rules.models import Finding
@@ -29,9 +33,9 @@ from rules.models import Finding
 # Rules taking (persons) vs (families) vs (persons, families) are wired up
 # explicitly below rather than forced into one signature - a handful of
 # rules is not enough to justify a plugin abstraction over a plain list.
-PERSON_RULES = [gender_inconsistency, duplicate_person, ambiguous_famc]
-FAMILY_RULES = [self_referential_family]
-PERSON_FAMILY_RULES = [family_back_reference]
+PERSON_RULES = [gender_inconsistency, duplicate_person, ambiguous_famc, name_hygiene]
+FAMILY_RULES = [self_referential_family, duplicate_family]
+PERSON_FAMILY_RULES = [family_back_reference, impossible_dates, missing_married_name]
 ALL_RULE_MODULES = PERSON_RULES + FAMILY_RULES + PERSON_FAMILY_RULES
 
 

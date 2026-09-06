@@ -1,0 +1,850 @@
+[
+  {
+    "person_id": "a418573d-3e8f-4dd3-bcff-14e8b2c79a96",
+    "external_xref": "@I302788161754@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161754@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "William Morgan /Smith Jr./ Esq.",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "William Morgan"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Smith Jr."
+            },
+            {
+              "tag": "NSFX",
+              "level": 2,
+              "payload": "Esq."
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836082@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Chattanooga Ward 11, Hamilton, Tennessee; Roll: T625_1743; Page: 10A; Enumeration District: 196"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836084@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1910; Census Place: Chattanooga Ward 8, Hamilton, Tennessee; Roll: T624_1503; Page: 14A; Enumeration District: 0070; FHL microfilm: 1375516"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: Rome, Floyd, Georgia; Roll: 146; Page: 146A; Enumeration District: 063"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836102@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836103@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1900; Census Place: Chattanooga Ward 8, Hamilton, Tennessee; Page: 11; Enumeration District: 0069; FHL microfilm: 1241575"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836116@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Tennessee State Library and Archives; Nashville, Tennessee; Tennessee Death Records, 1908-1958; Roll Number: 4"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836197@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Virginia Department of Health; Richmond, Virginia; Virginia Deaths, 1912-2014"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "M"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F86@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F313@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "11 AUG 1867"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Virginia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836082@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Chattanooga Ward 11, Hamilton, Tennessee; Roll: T625_1743; Page: 10A; Enumeration District: 196"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836084@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1910; Census Place: Chattanooga Ward 8, Hamilton, Tennessee; Roll: T624_1503; Page: 14A; Enumeration District: 0070; FHL microfilm: 1375516"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: Rome, Floyd, Georgia; Roll: 146; Page: 146A; Enumeration District: 063"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836102@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836103@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1900; Census Place: Chattanooga Ward 8, Hamilton, Tennessee; Page: 11; Enumeration District: 0069; FHL microfilm: 1241575"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836116@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Tennessee State Library and Archives; Nashville, Tennessee; Tennessee Death Records, 1908-1958; Roll Number: 4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1880"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Rome, Floyd, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836098@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1880; Census Place: Rome, Floyd, Georgia; Roll: 146; Page: 146A; Enumeration District: 063"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Single"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "JUN 1890"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Chattanooga, Hamilton, Tennessee, USA"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1900"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Chattanooga Ward 8, Hamilton, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836103@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1900; Census Place: Chattanooga Ward 8, Hamilton, Tennessee; Page: 11; Enumeration District: 0069; FHL microfilm: 1241575"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head: Head"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1910"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Chattanooga Ward 8, Hamilton, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836084@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1910; Census Place: Chattanooga Ward 8, Hamilton, Tennessee; Roll: T624_1503; Page: 14A; Enumeration District: 0070; FHL microfilm: 1375516"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Head"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1920"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Chattanooga Ward 11, Hamilton, Tennessee, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836082@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1920; Census Place: Chattanooga Ward 11, Hamilton, Tennessee; Roll: T625_1743; Page: 10A; Enumeration District: 196"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Relation to Head: Head; Residence Marital Status: Married"
+            }
+          ]
+        },
+        {
+          "tag": "DEAT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "23 FEB 1942"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Pittsylvania County, Virginia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836102@"
+            }
+          ]
+        },
+        {
+          "tag": "BURI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Rome, Floyd County, Georgia, United States of America"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836102@"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836082@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1920; Census Place: Chattanooga Ward 11, Hamilton, Tennessee; Roll: T625_1743; Page: 10A; Enumeration District: 196"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836083@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Ancestry Family Tree"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836084@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1910; Census Place: Chattanooga Ward 8, Hamilton, Tennessee; Roll: T624_1503; Page: 14A; Enumeration District: 0070; FHL microfilm: 1375516"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836098@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1880; Census Place: Rome, Floyd, Georgia; Roll: 146; Page: 146A; Enumeration District: 063"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836102@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836103@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1900; Census Place: Chattanooga Ward 8, Hamilton, Tennessee; Page: 11; Enumeration District: 0069; FHL microfilm: 1241575"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836116@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Tennessee State Library and Archives; Nashville, Tennessee; Tennessee Death Records, 1908-1958; Roll Number: 4"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836197@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Virginia Department of Health; Richmond, Virginia; Virginia Deaths, 1912-2014"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "3186937e-00d4-46c8-915a-536a4e796be5",
+    "external_xref": "@I302788161946@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161946@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Alice Jane /(Hardin) Aaron/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Alice Jane"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "(Hardin) Aaron"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836084@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1910; Census Place: Sterling, Cherokee, Alabama; Roll: T624_5; Page: 6A; Enumeration District: 0017; FHL microfilm: 1374018"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836095@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836103@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1900; Census Place: Diamond, Gilmer, Georgia; Page: 9; Enumeration District: 0040; FHL microfilm: 1240200"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F249@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F8@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "22 JUN 1872"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Fannin, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836084@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1910; Census Place: Sterling, Cherokee, Alabama; Roll: T624_5; Page: 6A; Enumeration District: 0017; FHL microfilm: 1374018"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836103@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1900; Census Place: Diamond, Gilmer, Georgia; Page: 9; Enumeration District: 0040; FHL microfilm: 1240200"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1900"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Diamond, Gilmer, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836103@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1900; Census Place: Diamond, Gilmer, Georgia; Page: 9; Enumeration District: 0040; FHL microfilm: 1240200"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head: Wife"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1910"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Sterling, Cherokee, Alabama, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836084@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Year: 1910; Census Place: Sterling, Cherokee, Alabama; Roll: T624_5; Page: 6A; Enumeration District: 0017; FHL microfilm: 1374018"
+                }
+              ]
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Marital Status: Married; Relation to Head of House: Wife"
+            }
+          ]
+        },
+        {
+          "tag": "DEAT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "12 FEB 1965"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Dalton, Whitfield, Georgia, USA"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836083@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Ancestry Family Tree"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836084@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1910; Census Place: Sterling, Cherokee, Alabama; Roll: T624_5; Page: 6A; Enumeration District: 0017; FHL microfilm: 1374018"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836095@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836103@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Year: 1900; Census Place: Diamond, Gilmer, Georgia; Page: 9; Enumeration District: 0040; FHL microfilm: 1240200"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836246@"
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "a6bab641-b415-4641-b75e-f44866da9e33",
+    "external_xref": "@I302788162387@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788162387@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Matthew /Bolton(4GGF)/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Matthew"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Bolton(4GGF)"
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "M"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F88@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F438@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "22 APR 1774"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Edgecombe, Edgecombe, North Carolina, USA"
+            }
+          ]
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "22 APR 1779"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Edgecombe, Edgecombe, North Carolina, USA"
+            }
+          ]
+        },
+        {
+          "tag": "MARR",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "13 FEB 1794"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": ",Laurens,South Carolina,USA"
+            }
+          ]
+        },
+        {
+          "tag": "EVEN",
+          "level": 1,
+          "children": [
+            {
+              "tag": "TYPE",
+              "level": 2,
+              "payload": "Marriage"
+            },
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "13 FEB 1794"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Laurens,South Carolina,USA"
+            }
+          ]
+        },
+        {
+          "tag": "DEAT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "27 APR 1840"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Norcross, Gwinnett, Georgia, USA"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

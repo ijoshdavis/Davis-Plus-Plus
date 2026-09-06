@@ -13,9 +13,13 @@ from pathlib import Path
 
 from rules.checks import (
     ambiguous_famc,
+    duplicate_family,
     duplicate_person,
     family_back_reference,
     gender_inconsistency,
+    impossible_dates,
+    missing_married_name,
+    name_hygiene,
     self_referential_family,
 )
 from rules.models import FamilyRecord, PersonRecord
@@ -94,3 +98,72 @@ def test_family_back_reference_catches_self_referential_families():
     # both HUSB and WIFE roles fail, for both families
     assert len(findings) == 4
     assert {f.details["family_xref"] for f in findings} == {"@F468@", "@F469@"}
+
+
+def test_impossible_dates_catches_child_bride():
+    persons = load_persons("child_bride_person.json")
+    families = load_families("child_bride_family.json")
+    findings = impossible_dates.run(persons, families)
+    assert len(findings) == 1
+    assert findings[0].details["kind"] == "marriage_before_min_age"
+    assert findings[0].details["age_at_marriage"] == 2
+
+
+def test_impossible_dates_ignores_clean_person():
+    persons = load_persons("clean_control_person.json")
+    assert impossible_dates.run(persons, []) == []
+
+
+def test_missing_married_name_catches_mamie_stover():
+    persons = load_persons("mamie_stover_family_persons.json")
+    families = load_families("mamie_stover_family.json")
+    findings = missing_married_name.run(persons, families)
+    xrefs = {f.details["external_xref"] for f in findings}
+    assert "@I302788161329@" in xrefs  # Mamie Pauline Stover
+    assert "@I302788161369@" not in xrefs  # Johnnie Jefferson Davis is male, not a candidate
+
+
+def test_duplicate_family_finds_no_exact_xref_duplicates_in_real_data():
+    # No real specimen exists in either tree for this narrow (exact husb/wife
+    # xref pair repeated) definition - verified directly against the store.
+    # This just proves the grouping logic doesn't false-positive on distinct
+    # couples that happen to share one spouse.
+    shared_spouse = load_families("mamie_stover_family.json")[0]
+    other = FamilyRecord(
+        family_persona_id="synthetic-1",
+        external_xref="@F_SYNTHETIC@",
+        husb_xref=shared_spouse.husb_xref,
+        wife_xref="@I_SOMEONE_ELSE@",
+        chil_xrefs=[],
+        raw={"level": 0, "tag": "FAM", "xref": "@F_SYNTHETIC@", "children": []},
+    )
+    assert duplicate_family.run([shared_spouse, other]) == []
+
+
+def test_name_hygiene_catches_davis_specimens():
+    persons = load_persons("name_hygiene_davis.json")
+    findings = name_hygiene.run(persons)
+    kinds_by_xref = {}
+    for f in findings:
+        kinds_by_xref.setdefault(f.details["external_xref"], set()).add(f.details["kind"])
+    assert kinds_by_xref["@I302788161946@"] == {"parenthetical_in_surname"}  # Alice Jane (Hardin) Aaron
+    assert kinds_by_xref["@I302788162387@"] == {  # Bolton(4GGF)
+        "parenthetical_in_surname",
+        "research_annotation_in_surname",
+    }
+    assert kinds_by_xref["@I302788161754@"] == {"suffix_in_surname"}  # Smith Jr.
+
+
+def test_name_hygiene_catches_ford_specimens():
+    persons = load_persons("name_hygiene_ford.json")
+    findings = name_hygiene.run(persons)
+    kinds_by_xref = {}
+    for f in findings:
+        kinds_by_xref.setdefault(f.details["external_xref"], set()).add(f.details["kind"])
+    assert kinds_by_xref["@I34039528489@"] == {"unbalanced_quotes"}  # Evelyn Irene "Eva" Evie"
+    assert kinds_by_xref["@I_CL016@"] == {"empty_surname"}  # Susannah //
+
+
+def test_name_hygiene_ignores_clean_person():
+    persons = load_persons("clean_control_person.json")
+    assert name_hygiene.run(persons) == []
