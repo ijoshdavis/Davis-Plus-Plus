@@ -1,0 +1,109 @@
+[
+  {
+    "person_id": "0bd6b6e2-c7b1-4f86-88c4-1708c308e3b8",
+    "external_xref": "@I302788162351@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788162351@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Hezekiah /Herring/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Hezekiah"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Herring"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836095@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836160@"
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "F"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F67@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F164@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1806"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Oglethorpe, Georgia, United States"
+            }
+          ]
+        },
+        {
+          "tag": "DEAT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1862"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Oglethorpe, Georgia, United States"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836083@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Ancestry Family Tree"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836095@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836160@"
+        }
+      ]
+    }
+  }
+]

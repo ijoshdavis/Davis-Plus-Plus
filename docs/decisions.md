@@ -146,6 +146,101 @@ Exported files are at `export/output/*.ged` (gitignored — regenerable, not
 source data). Importing them into Gramps and RootsMagic to check for errors/
 warnings is a manual step — no tool here can drive either app's UI.
 
+## 2026-09-06 — M3: Gramps import confirms the round trip (Davis++)
+
+User ran the actual exported file (`export/output/Davis++.ged`) through
+Gramps 6.0's import. Every reported problem maps to an already-documented,
+expected gap — nothing new:
+
+- **11× "OBJE ... not in input GEDCOM"** — the 11 media records M2 never
+  ingested (see above). Gramps auto-created placeholder objects rather than
+  failing.
+- **2× "family ... does not refer back to the family"** (F468/F469) — the
+  identical two data-integrity quirks Gramps also found importing the
+  *original* Ancestry file directly (checked separately: same two family
+  ids, same missing-back-reference shape). Confirms the underlying
+  relationship data round-tripped correctly, quirks included — Ancestry's
+  own export has this inconsistency, Kinstore didn't introduce or fix it.
+- Remaining ~1,700 "ignored"/"skipped" lines are all Ancestry's non-standard
+  `SOUR.DATA` substructure (`WWW`/`DATE`/`PLAC`) and inline OBJE-pointer
+  crop metadata (`_CROP`/`_LEFT`/`_TOP`/`_WDTH`/`_HGHT`/`_TYPE`) — faithfully
+  carried over from `persona.raw`, not introduced by the exporter.
+- Zero `_APID` complaints, matching the earlier original-file run (still
+  unconfirmed whether Gramps preserves it silently or drops it silently —
+  doesn't block M3, since the fidelity check that matters is the DB round
+  trip, already verified independently).
+- Fewer distinct problem *categories* than importing the original file
+  directly (9 vs. ~29) — everything OBJE-internal (`_USER`, `_ENCR`,
+  `_MTYPE`, etc.) disappeared along with the OBJE records themselves.
+
+M3's Gramps acceptance criterion is met for Davis++, modulo the documented
+media-record gap. Ford-Davis-Tree and RootsMagic still pending.
+
+## 2026-09-06 — M3: RootsMagic surfaces a real ambiguity (Ronnie Lamar Davis)
+
+User imported `export/output/Davis++.ged` into RootsMagic and noticed Ronnie
+Lamar Davis's mother wasn't shown, though she appears fine in Gramps.
+Investigated: Ronnie has **two** `FAMC` links in the source data - `@F416@`
+(father Eldridge Matthew Hurst, no mother) and `@F93@` (Johnnie Jefferson
+Davis + Mamie Pauline Stover, married 1933, with Ronnie tagged `_FREL step`
+on the FAM's CHIL line). `_FREL` is not a real GEDCOM tag - the standard
+mechanism is `PEDI` on the person's own FAMC line - so Ancestry's export
+gives no standards-based way to know which family is biological. Gramps and
+RootsMagic each resolve that ambiguity differently (Gramps appears to surface
+both; RootsMagic appears to only surface one). Confirmed via grep: `_FREL`
+appears exactly once in the whole file (this record) and is silently ignored
+by both apps' import logs - not a round-trip bug, a pre-existing Ancestry
+data-modeling gap. Became the seed case for the `ambiguous_famc_pedigree`
+rule below.
+
+## 2026-09-06 — M4: rules engine, first pass
+
+Added `finding` table (migration `0003`) and `rules/engine.py`, which loads
+personas/families for a tree from the M2 store and runs a set of checks.
+Findings are recomputed from scratch each run (old rows for that rule+tree
+deleted first) - the store is the source of truth, not the finding table.
+Rules are plain functions over `PersonRecord`/`FamilyRecord` lists (no DB
+dependency), so they're unit-testable against fixtures pulled straight from
+real data - `rules/test_rules.py`, 8 tests, all passing.
+
+Five rules implemented so far, two from the plan's required list and three
+found live this session:
+
+- **`gender_inconsistency`** (plan-required) — uses `gender-guesser` (added
+  as a dependency), only flags a *confident* male/female guess that
+  disagrees with recorded sex (mirrors the plan's "strongly disagrees").
+  Catches Hezekiah Herring (`@I302788162351@`, recorded `SEX F`).
+- **`duplicate_person`** (plan-required) — same normalized name within a
+  tree, clustered by birth-year compatibility (union-find; an unknown year
+  is compatible with anything, including another unknown - needed to catch
+  the fixture case, since neither Lizzie Renfroe record has a birth year).
+  Catches both `@I302788162034@` / `@I302788162038@` "Lizzie Renfroe".
+- **`ambiguous_famc_pedigree`** (not in the plan; found this session) —
+  person with 2+ `FAMC` and no `PEDI` disambiguating at least one. Catches
+  Ronnie Lamar Davis, see above.
+- **`self_referential_family`** (not in the plan; found this session) — a
+  family's `HUSB` and `WIFE` are the *same person*. Found by inspecting why
+  `family_back_reference` fired twice for the same person+family: families
+  `@F468@`/`@F469@` both list one person (George W Mayo for `@F468@`) as
+  both spouses. Ancestry tags these `_SREL unknown` - even its own matching
+  flagged uncertainty. More severe and clearer than a missing back-reference,
+  so it's its own rule rather than folded into that one.
+- **`family_back_reference`** (not in the plan; found via Gramps' own
+  auto-repair on the original file import, M3) — a family's `HUSB`/`WIFE`
+  doesn't have a matching `FAMS` pointer back. Gramps silently self-heals
+  this on import; this rule surfaces it as a reviewable finding instead.
+
+Run against the real Supabase data: Davis++ has 91 findings across 5 rules,
+Ford-Davis-Tree has 86 across 3 (no `family_back_reference` or
+`self_referential_family` hits - those two specific bad records are only in
+the newer tree).
+
+**Not yet built**, still required by the plan: **name hygiene**, **missing
+married name**, **duplicate family**, **impossible dates**. The plan's own
+target numbers for these (145 married names, 25 damaged names) are subject
+to the same stale-data caveat as the 11,174 `_APID` figure - real numbers
+from the real store will replace them once built.
+
 ## 2026-09-05 — Ingest bug found and fixed: multiple `_APID` per citation
 
 A handful of `SOUR` citations in Davis++ carry more than one `_APID` child

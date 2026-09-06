@@ -1,0 +1,572 @@
+[
+  {
+    "person_id": "c1ec8cf8-38ce-40c3-924b-7c6b5d172ed4",
+    "external_xref": "@I302788161326@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161326@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Ronnie Lamar /Davis/",
+          "children": [
+            {
+              "tag": "GIVN",
+              "level": 2,
+              "payload": "Ronnie Lamar"
+            },
+            {
+              "tag": "SURN",
+              "level": 2,
+              "payload": "Davis"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836079@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836080@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836200@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Woodstock; State: Georgia; Year(s): 1996-2002"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836200@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Woodstock; State: Georgia; Year(s): 1993-1996"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836224@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Woodstock; State: Georgia; Year(s): 1996-2002"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836224@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Woodstock; State: Georgia; Year(s): 1993-1996"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836229@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836331@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Texas Department of State Health Services; Austin, Texas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SEX",
+          "level": 1,
+          "payload": "M"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F416@"
+        },
+        {
+          "tag": "FAMC",
+          "level": 1,
+          "payload": "@F93@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F163@"
+        },
+        {
+          "tag": "FAMS",
+          "level": 1,
+          "payload": "@F154@"
+        },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "28 APR 1951"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Fulton, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836079@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836080@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836229@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836331@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "Texas Department of State Health Services; Austin, Texas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "GRAD",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "ABT 1967"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Decatur, De Kalb, Georgia, USA"
+            },
+            {
+              "tag": "NOTE",
+              "level": 2,
+              "payload": "Shamrock High School"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1983-"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Woodstock, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836405@"
+            }
+          ]
+        },
+        {
+          "tag": "EVEN",
+          "level": 1,
+          "children": [
+            {
+              "tag": "TYPE",
+              "level": 2,
+              "payload": "Medal of Valor 1989"
+            },
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "9 NOV 1989"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836372@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "9 Nov 1989"
+                },
+                {
+                  "tag": "DATA",
+                  "level": 3,
+                  "children": [
+                    {
+                      "tag": "WWW",
+                      "level": 4,
+                      "payload": "https://www.newspapers.com/clip/71503262/the-atlanta-constitution/?xid=637"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "EVEN",
+          "level": 1,
+          "children": [
+            {
+              "tag": "TYPE",
+              "level": 2,
+              "payload": "Medal of Valor"
+            },
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "10 NOV 1989"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Atlanta, Georgia"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836371@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "10 Nov 1989"
+                },
+                {
+                  "tag": "DATA",
+                  "level": 3,
+                  "children": [
+                    {
+                      "tag": "WWW",
+                      "level": 4,
+                      "payload": "https://www.newspapers.com/clip/71503120/the-atlanta-constitution/?xid=637"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "1993"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Woodstock, GA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836079@"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836200@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Woodstock; State: Georgia; Year(s): 1993-1996"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836224@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Woodstock; State: Georgia; Year(s): 1993-1996"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "BET 1996 AND 2002"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Woodstock, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836200@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Woodstock; State: Georgia; Year(s): 1996-2002"
+                }
+              ]
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836224@",
+              "children": [
+                {
+                  "tag": "PAGE",
+                  "level": 3,
+                  "payload": "City: Woodstock; State: Georgia; Year(s): 1996-2002"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "BET 2000 AND 2014"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Marietta, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836405@"
+            }
+          ]
+        },
+        {
+          "tag": "RESI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "DATE",
+              "level": 2,
+              "payload": "BET 2010 AND 2012"
+            },
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Woodstock, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836405@"
+            }
+          ]
+        },
+        {
+          "tag": "BURI",
+          "level": 1,
+          "children": [
+            {
+              "tag": "PLAC",
+              "level": 2,
+              "payload": "Oak Grove, Cherokee County, Georgia, USA"
+            },
+            {
+              "tag": "SOUR",
+              "level": 2,
+              "payload": "@S1128836080@"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836079@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836080@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836200@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "City: Woodstock; State: Georgia; Year(s): 1996-2002"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836200@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "City: Woodstock; State: Georgia; Year(s): 1993-1996"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836224@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "City: Woodstock; State: Georgia; Year(s): 1996-2002"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836224@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "City: Woodstock; State: Georgia; Year(s): 1993-1996"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836229@"
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836331@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "Texas Department of State Health Services; Austin, Texas"
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836371@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "10 Nov 1989"
+            },
+            {
+              "tag": "DATA",
+              "level": 2,
+              "children": [
+                {
+                  "tag": "WWW",
+                  "level": 3,
+                  "payload": "https://www.newspapers.com/clip/71503120/the-atlanta-constitution/?xid=637"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836372@",
+          "children": [
+            {
+              "tag": "PAGE",
+              "level": 2,
+              "payload": "9 Nov 1989"
+            },
+            {
+              "tag": "DATA",
+              "level": 2,
+              "children": [
+                {
+                  "tag": "WWW",
+                  "level": 3,
+                  "payload": "https://www.newspapers.com/clip/71503262/the-atlanta-constitution/?xid=637"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "SOUR",
+          "level": 1,
+          "payload": "@S1128836405@"
+        }
+      ]
+    }
+  }
+]
