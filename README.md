@@ -103,12 +103,22 @@ owner (succeeds) and family (correctly rejected by RLS). `web/` is a Next.js
 API server (settles the M2-era pooler-vs-supabase-js question in
 `docs/decisions.md`). `tsc`/`eslint`/`next build` all clean.
 
-**Blocked on you for anything beyond that:** nothing is granted to Supabase's
-`anon` role by design, so the app can't show data without a real login.
-Needed: (1) the Supabase anon/publishable key (Project Settings → API — not
-the DB connection string I already have), (2) the Email auth provider
-enabled (confirmed disabled earlier), (3) your own user account with an
-`owner` row in `app_user_role`.
+**Login is now a PIN, not email+password** — the user didn't want an email
+field anywhere, even during account setup. A PIN is both the Supabase
+password and, via a fixed mapping (`web/lib/pinAuth.ts`), a synthetic email
+— login stays a single field (styled as a numeric keypad), Supabase still
+issues a real session, RLS is unchanged. Accounts are created directly via
+SQL (bcrypt-hashed, modeled on a real dashboard-created row) rather than
+through the dashboard's invite-email flow, which hit both an expired link
+and the Email provider being disabled — verified against Supabase's real
+auth endpoint before trusting it, see `docs/decisions.md`.
+
+**Dashboard now shows a full KPI row** — people, families, sources,
+citations, repositories, open findings, names applied — using the
+`dataviz` skill's "handful of headline numbers → stat tile row" guidance.
+Needed a small grant fix (migration `0006`): `source`/`citation`/
+`repository` were never granted to `authenticated` at all (not an RLS gap —
+just nothing had queried them from the client yet).
 
 ## Local development
 
