@@ -120,6 +120,36 @@ Needed a small grant fix (migration `0006`): `source`/`citation`/
 `repository` were never granted to `authenticated` at all (not an RLS gap —
 just nothing had queried them from the client yet).
 
+**Two real bugs found and fixed while rounding out M6, both verified against
+live Supabase data, not just local:**
+- **RLS hole since M5**: `resolve_person_id()` compared two different
+  `system` vocabularies that happen to share a column name
+  (`family_persona.system` = ingest adapter, `person_external_id.system` =
+  identity namespace) — always returned NULL, which meant a `viewer` could
+  never see *any* family record, deceased or not. Fixed in migration `0007`;
+  re-verified with the same simulated-role technique as M5's original test —
+  viewer now correctly sees 564 of 931 families (both spouses deceased).
+- **`/people` silently showed at most 1,000 of 3,135 people** — Supabase's
+  PostgREST caps every response at 1,000 rows server-side regardless of the
+  client's `.limit()`. Fixed with real `.range()`-based pagination;
+  replayed against the live REST API to confirm all 3,135 rows now come
+  back, no duplicates or gaps.
+
+**Also added:** person detail page now shows parents/siblings and
+spouse/children (via a new `family_membership` view), a `/families/[id]`
+page, search-by-name on `/people`, and the GEDCOM exporter now layers
+applied `person_name` conclusions onto the export (tagged
+`_KINSTORE_CONCLUSION`, preferred name first) — a fix made in the Findings
+UI today will actually reach the file M7 eventually hands to RootsMagic,
+which wasn't true before. CI now runs `export/`'s tests and a full
+`tsc`/`eslint`/`next build` job for the web app, neither of which were
+checked automatically before this.
+
+**Deliberately not touched, even with full autonomy:** the actual M7
+write-back to Ancestry (needs human-supervised per-person review in
+RootsMagic) and MFA enforcement (no TOTP enrollment UI exists yet — a
+restrictive policy right now would lock out the only account that exists).
+
 ## Local development
 
 ```sh

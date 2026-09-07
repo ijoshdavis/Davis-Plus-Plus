@@ -536,3 +536,72 @@ them from the client yet so the grant was never added). Used the `dataviz`
 skill's guidance for "a handful of headline numbers": a KPI row of stat
 tiles (`web/app/page.tsx`), not a bar chart mixing incomparable units
 (people vs. citations vs. findings aren't on one comparable scale).
+
+## 2026-09-06 — Autonomous session: two real bugs found, M6 rounded out
+
+User stepped away for about an hour and asked me to keep building and use
+my own judgment on scope. Deliberately did **not** touch two things even
+with that latitude: the actual Ancestry write-back (M7 - TreeShare needs
+per-person review in RootsMagic, a GUI I can't drive anyway, and it's a
+hard-to-reverse write to a real third-party account) and MFA enforcement
+(no TOTP enrollment UI exists yet, so a restrictive policy would lock out
+the only account that currently exists). Both are explicitly left for when
+the user is back.
+
+**Bug 1 - a real M5 RLS hole, found while building a new feature, not
+looking for bugs.** Building a `family_membership` view (resolves
+`family_persona`'s raw `husb_xref`/`wife_xref`/`chil_xrefs` to actual
+`person_id`s) surfaced that `resolve_person_id()` (from migration `0004`)
+returned NULL for every call: it matched the caller-supplied `system`
+value against `person_external_id.system`, but callers were passing
+`family_persona.system` (`'ancestry_gedcom'`, the ingest adapter name) -
+`person_external_id.system` is a different vocabulary
+(`'ancestry_pid'`, the identity namespace). Same column name, unrelated
+meaning. Consequence: `family_persona_select`'s viewer branch called
+`is_person_living(NULL)`, which conservatively defaults to `true` - so
+`not is_person_living(...)` was always false for both spouses, meaning **a
+viewer could never see any family record at all**, deceased or not,
+regardless of what the policy was actually supposed to allow. This has
+been live since M5 shipped. Fixed by dropping the unnecessary parameter
+(`person_external_id` only ever holds `'ancestry_pid'` for GEDCOM xrefs,
+regardless of which adapter wrote the row referencing them) - migration
+`0007`. Re-verified with the same simulated-role technique as M5's
+original test, against both local and real Supabase data: viewer now sees
+564 of 931 families (both spouses deceased); owner sees all 931.
+
+**Bug 2 - `/people` was silently showing at most 1,000 of 3,135 people.**
+Supabase's PostgREST caps every response at 1,000 rows server-side
+*regardless of a client-requested `.limit()`* - confirmed directly
+(`content-range: 0-999/*` even when asking for 10,000). `web/app/people/page.tsx`
+had a hardcoded `.limit(1000)` (a leftover from initial scaffolding, never
+revisited against the real row count) and no pagination, so roughly
+two-thirds of the tree was invisible in the list view with no indication
+anything was missing. Fixed with a `.range()`-based paging loop, ordered
+by a unique column so pages can't skip or duplicate rows. Verified by
+replaying the same pagination against the real REST API directly: 3,135
+rows fetched, 3,135 unique - matches the known total exactly.
+
+**M6 rounded out:**
+- `family_membership` view + person detail page now shows parents/siblings
+  and spouse/children, each linking to a new `/families/[id]` page
+  (spouses, children, marriage year from `family_persona.raw`).
+- Search-by-name added to `/people` (client-side substring match).
+- `export/ancestry_gedcom/write.py` now layers `person_name` conclusions
+  onto the exported GEDCOM as additional `NAME` records tagged
+  `_KINSTORE_CONCLUSION` - so a fix applied through the Findings UI today
+  actually reaches the file M7 will eventually hand to RootsMagic, which
+  wasn't true before (the exporter only ever read `persona.raw`). A
+  preferred conclusion leads the NAME list (first `NAME` = conventional
+  "primary" signal); the persona's own asserted names are kept, never
+  overwritten - same evidence-vs-conclusion split the store already keeps,
+  carried through to the file. 3 new unit tests (`export/ancestry_gedcom/test_write.py`,
+  no DB needed), verified end-to-end with a real (temporary, then deleted)
+  conclusion against the local store: exported, re-parsed clean, correct
+  ordering, then cleaned up.
+- CI (`.github/workflows/ci.yml`) now runs `export/`'s tests too, and gained
+  a second job running the web app's `tsc`/`eslint`/`next build` - none of
+  that was checked in CI before this, despite being run manually after
+  every web change all session.
+
+Both database bug fixes were verified against the real Supabase project,
+not just local, before being called done.
