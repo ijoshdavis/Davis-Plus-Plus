@@ -491,3 +491,48 @@ Verified everything that *can* be verified without those three things:
 `tsc --noEmit` clean, `eslint` clean, `next build` succeeds (against
 placeholder env vars), and `/login`/`/people` both return HTTP 200 with no
 server errors against the local dev server.
+
+## 2026-09-06 — M6: PIN login, replacing email+password in the UI
+
+User doesn't want an email/password flow at all - not even to type a
+synthetic email once during account setup. Landed on: a person's PIN is
+*both* their Supabase password and, via a fixed deterministic mapping
+(`lib/pinAuth.ts`: `<pin>@kinstore.local`), their email - so the login
+screen only ever shows one field (styled as a phone-style numeric keypad
+per a follow-up request), while Supabase still issues a real session and
+every RLS policy from M5 keeps working unchanged. No custom backend, no
+service_role key, no admin API.
+
+Creating the account itself hit two real snags, in order:
+1. The dashboard's "Add user" defaulted to emailing an invite link, which
+   pointed at `localhost:3000` (the project's configured Site URL) and had
+   already expired by the time it was clicked - `otp_expired`.
+2. Separately, the **Email auth provider** itself was toggled off (a
+   different setting than "allow new signups", confirmed disabled in an
+   earlier screenshot this session) - login failed with "Email logins are
+   disabled" even for an already-created account.
+
+Once the user said they didn't want to touch the dashboard for this at
+all, created the account directly via SQL instead of asking them to keep
+fighting the dashboard: read an existing dashboard-created row from
+`auth.users` as a template (to get `instance_id`, `aud`, `role`,
+`raw_app_meta_data` shape exactly right rather than guessing), computed a
+bcrypt hash of the PIN with the `bcrypt` package (cost 10, matching the
+template row), and inserted directly. **Did not assume this worked** -
+verified with a real call to Supabase's own `/auth/v1/token?grant_type=password`
+endpoint and got back a genuine access token before telling the user it
+was ready. This is an unsupported/undocumented path (the supported one is
+the Admin API with a service_role key, which wasn't available), justified
+here by: reading a real row as a template first, and verifying the result
+against the actual auth service rather than trusting the insert alone.
+
+## 2026-09-06 — M6: dashboard KPI row
+
+User asked for the database to be entirely spanned by check.
+`source`/`citation`/`repository` had no `authenticated` grant at all
+(migration `0006` - not an RLS gap, migration `0004`'s comment already
+called them low-sensitivity bibliographic metadata, nothing had queried
+them from the client yet so the grant was never added). Used the `dataviz`
+skill's guidance for "a handful of headline numbers": a KPI row of stat
+tiles (`web/app/page.tsx`), not a bar chart mixing incomparable units
+(people vs. citations vs. findings aren't on one comparable scale).

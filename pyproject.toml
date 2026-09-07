@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Local-first genealogy system. Postgres holds the truth; Ancestry is one upstream source among many."
 requires-python = ">=3.12"
 dependencies = [
+    "bcrypt>=5.0.0",
     "gedcom-lite>=0.2.0",
     "gender-guesser>=0.4.0",
     "psycopg[binary]>=3.2",
