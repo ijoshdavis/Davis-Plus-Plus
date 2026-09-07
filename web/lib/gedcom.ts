@@ -47,3 +47,7 @@ export function birthYear(raw: Node): number | undefined {
 export function deathYear(raw: Node): number | undefined {
   return eventYear(raw, "DEAT");
 }
+
+export function marriageYear(familyRaw: Node): number | undefined {
+  return eventYear(familyRaw, "MARR");
+}

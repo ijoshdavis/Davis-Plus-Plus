@@ -1,4 +1,4 @@
-"""M3 — GEDCOM export writer (see docs/build-plan.md §6 M3).
+"""M3/M6 — GEDCOM export writer (see docs/build-plan.md §6 M3, M6).
 
 The inverse of ingest.ancestry_gedcom.load.build_batch(): reconstructs a
 GEDCOM 5.5.1 file for one tree_id from what M2 stored. `persona.raw` /
@@ -7,6 +7,13 @@ the original INDI/FAM record - including inline citations and `_APID` - so
 exporting those is a direct rebuild, not a re-derivation. SOUR/REPO records
 were normalized out of the personas at ingest time, so those get rebuilt from
 the `source`/`repository` tables instead.
+
+M6 conclusions (`person_name`, applied through the Findings review UI) are
+layered on top of the persona's own NAME records, not merged into them -
+tagged `_KINSTORE_CONCLUSION` so a human (or RootsMagic) can still tell a
+Kinstore-applied conclusion apart from what the source actually asserted,
+same "personas before persons" distinction the store itself keeps, carried
+through to the file this hands off to TreeShare (M7).
 
 Usage:
     uv run python -m export.ancestry_gedcom.write <tree_id> <database_url> <output_path>
@@ -44,11 +51,34 @@ def structure_from_dict(d: dict) -> g.Structure:
     return node
 
 
-def _add_record_from_dict(doc: g.GedcomDocument, d: dict) -> None:
+def _add_record_from_dict(doc: g.GedcomDocument, d: dict) -> g.Structure:
     node = structure_from_dict(d)
     doc.records.append(node)
     if node.xref:
         doc.xrefs[node.xref] = node
+    return node
+
+
+def _add_conclusion_name(indi: g.Structure, name: dict) -> None:
+    given, surname = name["given"] or "", name["surname"] or ""
+    payload = f"{given} /{surname}/".strip()
+    name_node = g.Structure(level=1, tag="NAME", payload=payload, parent=indi)
+    name_node._dirty = True
+    if name["given"]:
+        name_node.add_child("GIVN", name["given"])
+    if name["surname"]:
+        name_node.add_child("SURN", name["surname"])
+    if name["suffix"]:
+        name_node.add_child("NSFX", name["suffix"])
+    name_node.add_child("_KINSTORE_CONCLUSION", name["type"])
+
+    # A preferred conclusion leads the NAME list (first NAME is the
+    # conventional "primary" signal); others are appended after the
+    # persona's own source-asserted names.
+    if name["preferred"]:
+        indi.children.insert(0, name_node)
+    else:
+        indi.children.append(name_node)
 
 
 def _fetchall(cur: psycopg.Cursor, query: str, params: tuple) -> list[dict]:
@@ -99,9 +129,18 @@ def export_tree(tree_id: str, database_url: str, output_path: str) -> bytes:
                    from source where tree_id = %s""",
                 (tree_id,),
             )
-            personas = _fetchall(cur, "select raw from persona where tree_id = %s order by external_xref", (tree_id,))
+            personas = _fetchall(
+                cur, "select person_id, raw from persona where tree_id = %s order by external_xref", (tree_id,)
+            )
             family_personas = _fetchall(
                 cur, "select raw from family_persona where tree_id = %s order by external_xref", (tree_id,)
+            )
+            person_ids = [p["person_id"] for p in personas]
+            names = _fetchall(
+                cur,
+                """select person_id, type, given, surname, suffix, preferred
+                   from person_name where person_id = any(%s)""",
+                (person_ids,),
             )
 
     for repo in repos:
@@ -111,8 +150,14 @@ def export_tree(tree_id: str, database_url: str, output_path: str) -> bytes:
     for src in sources:
         build_source_record(doc, src, repo_xref_by_id)
 
+    names_by_person: dict[str, list[dict]] = {}
+    for n in names:
+        names_by_person.setdefault(n["person_id"], []).append(n)
+
     for row in personas:
-        _add_record_from_dict(doc, row["raw"])
+        indi = _add_record_from_dict(doc, row["raw"])
+        for name in names_by_person.get(row["person_id"], []):
+            _add_conclusion_name(indi, name)
     for row in family_personas:
         _add_record_from_dict(doc, row["raw"])
 
