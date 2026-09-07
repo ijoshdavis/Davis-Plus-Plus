@@ -91,6 +91,25 @@ lock out family members before anyone's enrolled anything. Storage/
 signed-URL verification is moot until real media exists (tied to the M3
 media-record gap).
 
+**M6 (Read model + first UI)** — first pass built: `person_name` (first
+conclusion-layer table) + `change` (append-only log) — migration
+`0005_conclusions_and_changelog.sql`. `apply_missing_married_name()` is a
+Postgres RPC that writes the conclusion, logs the change, and marks the
+finding accepted atomically; verified against real Supabase data as both
+owner (succeeds) and family (correctly rejected by RLS). `web/` is a Next.js
+16 (App Router) app — `/login`, `/` (dashboard), `/people` (table view),
+`/people/[id]` (detail), `/findings` (list + apply/dismiss) — using
+`@supabase/supabase-js` client-side with the anon key directly, no separate
+API server (settles the M2-era pooler-vs-supabase-js question in
+`docs/decisions.md`). `tsc`/`eslint`/`next build` all clean.
+
+**Blocked on you for anything beyond that:** nothing is granted to Supabase's
+`anon` role by design, so the app can't show data without a real login.
+Needed: (1) the Supabase anon/publishable key (Project Settings → API — not
+the DB connection string I already have), (2) the Email auth provider
+enabled (confirmed disabled earlier), (3) your own user account with an
+`owner` row in `app_user_role`.
+
 ## Local development
 
 ```sh

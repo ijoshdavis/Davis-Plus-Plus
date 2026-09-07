@@ -435,3 +435,59 @@ pattern. Initially told the user this needed the dashboard; that was wrong.
 there's an actual UI (M6) and someone has a reason to enroll a TOTP factor,
 rather than adding a restrictive policy today that would lock out family
 members before anyone's enrolled anything.
+
+## 2026-09-06 — M6: read model + first UI, first pass
+
+Added the first real conclusion-layer table, `person_name` (migration
+`0005`), plus `change` (the append-only log every write goes through, per
+§5 - `person_name` writes are the first thing that logs to it). Both got RLS
+matching the same living/deceased split as `person`/`persona`, owner-only
+writes.
+
+`apply_missing_married_name(finding_id, given, surname)` is a Postgres
+function (`security invoker`, so the caller's own RLS applies - no
+privilege escalation needed, non-owners are naturally rejected by
+`person_name`'s insert policy) that writes the conclusion, logs the change,
+and marks the finding `accepted`, atomically, in one round trip. Verified
+against a real `missing_married_name` finding on both local and Supabase,
+simulating owner (succeeds) and family (correctly rejected by RLS) roles the
+same way M5's policies were tested.
+
+Decided the pooler-vs-supabase-js question flagged back at M2: went with
+`@supabase/supabase-js` + anon key, client-side only, no separate API
+server - matches funding-harvester/hb-os's pattern (confirmed working
+elsewhere in the org) and fits this milestone's read/write shape (CRUD +
+RLS, one RPC call for the one real mutation) with no pooler decision needed
+at all.
+
+Scaffolded `web/` as Next.js 16 (App Router, TypeScript, Tailwind).
+Noteworthy: this Next.js version ships an `AGENTS.md` warning that its APIs
+may differ from training data and pointing at bundled docs in
+`node_modules/next/dist/docs/` - worth reading before generating Next.js
+code, not just assuming prior knowledge holds. Confirmed real, relevant
+differences: `params`/`searchParams` are `Promise`s in Server Components now,
+and `PageProps<'/route'>`/`LayoutProps<'/route'>` are globally-available
+generated types (no import) as of this version.
+
+Pages: `/login` (email+password), `/` (counts dashboard), `/people` (table:
+name/sex/birth year/living-status/tree, derived client-side from
+`persona.raw` via `lib/gedcom.ts` - a TS mirror of `rules/gedcom_helpers.py`,
+display-only), `/people/[id]` (detail + any `person_name` conclusions),
+`/findings` (list + inline apply form for `missing_married_name`, generic
+dismiss for everything else). All client components - deliberately a "strict
+SPA" shape (per Next's own docs) since this is an internal tool, not
+SEO-sensitive; no server-side data fetching needed.
+
+A real, non-obvious blocker surfaced building this: nothing is granted to
+the `anon` Postgres role (by design - "public signup disabled" implies no
+meaningful anonymous access), so the app cannot show *anything* without a
+real logged-in session. That means M6 can't be tested end-to-end without:
+(1) the Supabase anon/publishable key (not yet provided - the DB connection
+string isn't it), (2) the Email auth provider enabled (confirmed disabled
+earlier this session), (3) a real user account with an `owner`
+`app_user_role` row. None of these are things this session can do alone.
+
+Verified everything that *can* be verified without those three things:
+`tsc --noEmit` clean, `eslint` clean, `next build` succeeds (against
+placeholder env vars), and `/login`/`/people` both return HTTP 200 with no
+server errors against the local dev server.
