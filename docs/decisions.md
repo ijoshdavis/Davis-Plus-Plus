@@ -605,3 +605,127 @@ rows fetched, 3,135 unique - matches the known total exactly.
 
 Both database bug fixes were verified against the real Supabase project,
 not just local, before being called done.
+
+## 2026-09-20 — Research/action queue, and a real rules-engine gap (Evelyn Irene Lutton)
+
+User asked to review Davis++ live on Ancestry.com (Chrome, cfpid pointed at
+the focus person) for anyone incorrectly connected, going generation by
+generation from the focus person up through great-grandparents. Two things
+surfaced, both cross-checked against each person's actual Ancestry profile,
+not just the pedigree chart:
+
+**Ronnie Lamar Davis** - already this repo's own seed case for
+`ambiguous_famc_pedigree` (see above, M3). Confirmed on Ancestry itself:
+his profile explicitly splits **biological parents** (Eldridge Matthew
+Hurst + Mamie Pauline Stover) from a **step** parent (Johnnie Jefferson
+Davis, Mamie's husband - Mamie and Johnnie had several other children
+recorded under Davis). Reads as a deliberate DNA-driven non-paternity
+finding someone already worked out, not a data error - logged as a
+`user_decision` research task instead of auto-resolving the finding.
+
+**Evelyn Irene Lutton** (b. 11 Jun 1908) - a real rules-engine gap. Her
+Ancestry profile records a son, Melvin Brown, born ABT 1922 (~14 years
+old at his birth), via a family with no marriage record and zero sources
+attached - unlike the 10+ census/vital records backing the rest of her
+profile. `impossible_dates` didn't catch this: `child_before_parent` only
+fires when a child's birth year is at-or-before the parent's own birth
+year, and `marriage_before_min_age` needs a `MARR` tag to compute an age
+from, which this family doesn't have. Confirmed straight from the
+committed GEDCOM (`data/raw/ancestry_gedcom/Davis++ (09-05-26).ged`,
+family `@F146@`): no `MARR` node, and the father is a bare `/Brown/` with
+no given name and no `SOUR` at all.
+
+Added a `young_parent` kind to `impossible_dates` (`_MIN_PLAUSIBLE_PARENT_AGE
+= 15`, deliberately looser than `_MIN_MARRIAGE_AGE`'s 12 - this fires on
+any parent-child pair, married or not, so it needs a wider "worth a look"
+band, not just the near-impossible). New fixture
+(`evelyn_lutton_family*.json`) built from the real GEDCOM record above -
+`person_id`/`family_persona_id` are synthesized UUIDs, not real Postgres
+ids, since this workspace has no live database credentials (a fresh git
+worktree never inherits the gitignored `.env`/`web/.env.local`); everything
+else in the fixture (names, dates, xrefs, structure) is real. Verified
+against actual data too, not just the fixture: stood up the local Postgres
+from a clean slate (`docker compose up`, auth shim, all 8 migrations,
+ingest, `rules.engine`) and re-ran the full rules engine - **368 findings
+for Davis++ now (was 349), 19 of them `young_parent`**, including this
+exact case (`age_at_child_birth: 14`, xref `@I302788161332@`). 17 unit
+tests pass (`uv run pytest rules/ export/`).
+
+Built the review-queue UI the user asked for: a `research_task` table
+(migration `0008`, same owner-write/family-read RLS shape as `finding`)
+and a new `/actions` page (`web/app/actions/page.tsx`) listing each task
+with its parent finding's details, Approve/Decline for `chrome_research`
+tasks and a free-text resolution box for `user_decision` ones. Verified
+the RLS with the same simulated-role technique as M5 (`SET LOCAL
+request.jwt.claim.sub` + `SET LOCAL ROLE authenticated`, rolled back):
+owner can update, family can select but a write attempt affects 0 rows -
+both tested against the two real seeded tasks, no lasting effect. Seeded
+those two rows for real, against the real `finding.id`s above, in local
+Postgres.
+
+**Scope boundary, made explicit rather than assumed:** `chrome_research`
+is read-only lookups only (checking hints, pulling a source image,
+confirming a fact) - never an edit to the Ancestry tree. build-plan.md's
+Ancestry constraints are unconditional ("This project never writes to
+Ancestry over HTTP... No exceptions") and a prior autonomous session
+already declined to automate write-back for the same reason. Any actual
+correction still goes through the existing finding -> person_name ->
+change flow, unchanged.
+
+**Not done, and worth flagging:** this workspace has no Supabase
+credentials (gitignored, worktree-local), so `web/.env.local` holds the
+same placeholder values CI uses for `next build` - the dev server runs
+and every route responds, but it can't reach the real project's data.
+The two seeded `research_task` rows and the recomputed findings exist
+only in the local Docker Postgres, not the live Supabase project, until
+someone reruns the same migration/ingest/engine steps there with the
+real `DATABASE_URL`. Also noticed, unrelated to this work and not fixed:
+`scripts/check-no-service-role-key.sh` false-positives on
+`web/lib/pinAuth.ts`'s own comment explaining that it has *no*
+service_role key - the grep matches the word inside the comment.
+
+**Follow-up same day: the local Docker Postgres above isn't enough for the
+web app.** User expected "fully local" to mean the browser UI itself works
+with no cloud project involved. It didn't yet: `web/lib/supabase.ts` talks
+to Supabase's hosted REST/Auth API via `supabase-js`, not raw Postgres, and
+the bare `postgres:16` container from `docker-compose.yml` (plus the
+`local_dev_auth_shim.sql` stand-in) has no REST/Auth layer for the browser
+to reach - that gap was real, not a misunderstanding to talk someone out of.
+
+Fixed by running the actual Supabase CLI locally (`supabase init` +
+`supabase start` at the repo root) - a full local stack (Postgres, REST,
+GoTrue Auth, Studio) in Docker, free, no account, no cloud project,
+fixed/shared local dev keys. Left `docker-compose.yml` and the auth shim
+alone (still useful for fast rules-engine-only iteration); the CLI stack is
+additive, on different ports (`54322` vs `5488`), so both run at once with
+no conflict.
+
+Re-ran the exact same steps against it: all 8 migrations (this time onto a
+*real* `auth` schema - no shim needed), both trees ingested (3,135 people,
+matches exactly), rules engine (368/364 findings, same as the docker-compose
+run), and re-seeded the same two `research_task` rows against this
+instance's own finding ids.
+
+Created a real local-only account rather than hand-crafting a bcrypt hash
+this time - the local instance doesn't have the live project's disabled-
+email-provider/expired-invite-link problems from the M6 entry above, so the
+supported path (`POST /auth/v1/admin/users` with the local secret key)
+worked directly. User asked for PIN `1973` specifically; local
+`minimum_password_length` is 6 (`supabase/config.toml`), but that's a
+signup/change-password strength check, not enforced on admin-created users
+or on sign-in - confirmed by actually calling
+`/auth/v1/token?grant_type=password` and getting back a real access token,
+not by assuming the shorter PIN would work. Marked the account `owner` in
+`app_user_role`.
+
+`web/.env.local` now points at the local stack
+(`http://127.0.0.1:54321` + the local publishable key - both fixed/shared
+local dev values, not secrets). `web/package.json`'s `dev` script now runs
+`supabase start --workdir ..` before `next dev`, so the stack comes up
+automatically on every `npm run dev` - confirmed idempotent (~2s, prints
+status and exits) when already running, so it doesn't slow down repeat
+startups. Verified the whole chain for real in the browser via
+Claude-in-Chrome, not just via curl: logged in through the actual PIN
+keypad UI with `1973`, landed on a dashboard showing real counts (3,135
+people, 931 families, 732 open findings), and confirmed `/actions` renders
+both seeded tasks with their joined finding details.

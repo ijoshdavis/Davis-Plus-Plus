@@ -1,0 +1,73 @@
+[
+  {
+    "person_id": "1a7f5e3c-9b2d-4c6a-a1f0-3d8e9c7b4a21",
+    "external_xref": "@I302788161332@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161332@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Evelyn Irene /Lutton/",
+          "children": [
+            { "tag": "GIVN", "level": 2, "payload": "Evelyn Irene" },
+            { "tag": "SURN", "level": 2, "payload": "Lutton" }
+          ]
+        },
+        { "tag": "SEX", "level": 1, "payload": "F" },
+        { "tag": "FAMC", "level": 1, "payload": "@F397@" },
+        { "tag": "FAMS", "level": 1, "payload": "@F145@" },
+        { "tag": "FAMS", "level": 1, "payload": "@F77@" },
+        { "tag": "FAMS", "level": 1, "payload": "@F146@" },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            { "tag": "DATE", "level": 2, "payload": "11 June 1908" },
+            { "tag": "PLAC", "level": 2, "payload": "Cedartown, Polk County, Georgia, United States of America" }
+          ]
+        },
+        {
+          "tag": "DEAT",
+          "level": 1,
+          "children": [
+            { "tag": "DATE", "level": 2, "payload": "24 SEP 1999" },
+            { "tag": "PLAC", "level": 2, "payload": "Parkersburg, Wood County, West Virginia, USA" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "person_id": "5c4d8a1e-6f7b-4a9c-9e2d-7b1a3f6c8d90",
+    "external_xref": "@I302788161584@",
+    "raw": {
+      "tag": "INDI",
+      "xref": "@I302788161584@",
+      "level": 0,
+      "children": [
+        {
+          "tag": "NAME",
+          "level": 1,
+          "payload": "Melvin /Brown/",
+          "children": [
+            { "tag": "GIVN", "level": 2, "payload": "Melvin" },
+            { "tag": "SURN", "level": 2, "payload": "Brown" }
+          ]
+        },
+        { "tag": "SEX", "level": 1, "payload": "M" },
+        { "tag": "FAMC", "level": 1, "payload": "@F146@" },
+        {
+          "tag": "BIRT",
+          "level": 1,
+          "children": [
+            { "tag": "DATE", "level": 2, "payload": "ABT 1922" },
+            { "tag": "PLAC", "level": 2, "payload": "Cedartown, Polk, Georgia, USA" }
+          ]
+        }
+      ]
+    }
+  }
+]

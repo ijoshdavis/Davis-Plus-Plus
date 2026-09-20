@@ -150,6 +150,20 @@ write-back to Ancestry (needs human-supervised per-person review in
 RootsMagic) and MFA enforcement (no TOTP enrollment UI exists yet — a
 restrictive policy right now would lock out the only account that exists).
 
+**Research/action queue added** — reviewing Davis++ live on Ancestry.com
+surfaced a real rules-engine gap: `impossible_dates` now also catches an
+implausibly young parent (`young_parent`, age < 15 at a child's birth) even
+with no marriage record to hang the existing check on — 19 hits on Davis++
+that no rule caught before (see `docs/decisions.md`, "Evelyn Irene Lutton").
+A new `research_task` table (migration `0008`, same RLS shape as `finding`)
+and `/actions` page track concrete next steps per finding — either a call
+only the owner can make, or a read-only Ancestry.com lookup approved for
+Claude to run (never a write — build-plan.md's Ancestry constraints are
+unconditional). Verified end-to-end against a from-scratch local Postgres
+(all 8 migrations, both trees ingested, rules engine re-run: 368 findings
+now, up from 349) and the RLS re-checked with M5's simulated-role technique,
+not just read from the SQL.
+
 ## Local development
 
 ```sh
