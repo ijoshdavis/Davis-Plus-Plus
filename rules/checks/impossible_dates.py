@@ -1,5 +1,9 @@
 """Impossible dates (plan-required): child before parent, death before birth,
-marriage before age 12.
+marriage before age 12. Also flags an implausibly young parent (a positive
+but sub-15 age at a child's birth) even when there's no marriage record to
+catch it via marriage_before_min_age - see docs/decisions.md, "Evelyn Irene
+Lutton": a non-marital child recorded with no source, born when the mother
+would have been about 14, that no existing rule caught.
 """
 
 from __future__ import annotations
@@ -10,6 +14,10 @@ from rules.models import FamilyRecord, Finding, PersonRecord
 RULE_NAME = "impossible_dates"
 
 _MIN_MARRIAGE_AGE = 12
+# Looser than _MIN_MARRIAGE_AGE on purpose: this fires on any parent-child
+# pair, married or not, so it needs to catch a wider "worth a human look"
+# band rather than only the near-impossible.
+_MIN_PLAUSIBLE_PARENT_AGE = 15
 
 
 def run(persons: list[PersonRecord], families: list[FamilyRecord]) -> list[Finding]:
@@ -79,6 +87,26 @@ def run(persons: list[PersonRecord], families: list[FamilyRecord]) -> list[Findi
                                 "parent_birth_year": birth,
                                 "child_xref": child.external_xref,
                                 "child_birth_year": child_birth,
+                            },
+                        )
+                    )
+                elif child_birth is not None and child_birth - birth < _MIN_PLAUSIBLE_PARENT_AGE:
+                    findings.append(
+                        Finding(
+                            rule=RULE_NAME,
+                            severity="warning",
+                            subject={
+                                "person_ids": [child.person_id, spouse.person_id],
+                                "family_ids": [fam.family_persona_id],
+                            },
+                            details={
+                                "kind": "young_parent",
+                                "parent_role": role,
+                                "parent_xref": spouse.external_xref,
+                                "parent_birth_year": birth,
+                                "child_xref": child.external_xref,
+                                "child_birth_year": child_birth,
+                                "age_at_child_birth": child_birth - birth,
                             },
                         )
                     )

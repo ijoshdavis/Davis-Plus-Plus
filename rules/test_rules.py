@@ -114,6 +114,21 @@ def test_impossible_dates_ignores_clean_person():
     assert impossible_dates.run(persons, []) == []
 
 
+def test_impossible_dates_catches_young_parent_evelyn_lutton():
+    # Evelyn Irene Lutton (b. 1908) is recorded as the mother of Melvin Brown
+    # (b. ABT 1922, no sources at all) via family @F146@, which has no MARR
+    # tag - so marriage_before_min_age never fires, and 1922 > 1908 so
+    # child_before_parent doesn't either. Found by hand while reviewing the
+    # tree on Ancestry; this was a real gap until this case seeded the check.
+    persons = load_persons("evelyn_lutton_family_persons.json")
+    families = load_families("evelyn_lutton_family.json")
+    findings = impossible_dates.run(persons, families)
+    assert len(findings) == 1
+    assert findings[0].details["kind"] == "young_parent"
+    assert findings[0].details["parent_xref"] == "@I302788161332@"
+    assert findings[0].details["age_at_child_birth"] == 14
+
+
 def test_missing_married_name_catches_mamie_stover():
     persons = load_persons("mamie_stover_family_persons.json")
     families = load_families("mamie_stover_family.json")
