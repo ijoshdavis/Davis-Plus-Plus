@@ -24,6 +24,19 @@ type Row = {
 // instead, ordered by a unique column so pages don't skip/duplicate rows.
 const PAGE_SIZE = 1000;
 
+// A single .in() filter listing every person_id (~3,135 UUIDs) blows past
+// URL length limits and the request fails at the gateway with 414 before it
+// ever reaches Postgres - confirmed via the network tab (OPTIONS preflight,
+// statusCode 414). Chunk the id list so each request's URL stays a
+// reasonable size.
+const ID_CHUNK_SIZE = 200;
+
+function chunk<T>(items: T[], size: number): T[][] {
+  const chunks: T[][] = [];
+  for (let i = 0; i < items.length; i += size) chunks.push(items.slice(i, i + size));
+  return chunks;
+}
+
 async function fetchAllPages<T>(
   query: (from: number, to: number) => PromiseLike<{ data: T[] | null; error: unknown }>
 ): Promise<T[]> {
@@ -59,14 +72,19 @@ export default function PeoplePage() {
       );
 
       const personIds = [...new Set(personas.map((p) => p.person_id))];
-      const privacy = await fetchAllPages<{ person_id: string; is_living: boolean }>((from, to) =>
-        supabase
+      const privacy: { person_id: string; is_living: boolean }[] = [];
+      for (const idChunk of chunk(personIds, ID_CHUNK_SIZE)) {
+        const { data, error } = await supabase
           .from("person_privacy")
           .select("person_id, is_living")
-          .in("person_id", personIds)
-          .order("person_id")
-          .range(from, to)
-      );
+          .in("person_id", idChunk)
+          .order("person_id");
+        if (error) {
+          console.error(error);
+          continue;
+        }
+        privacy.push(...(data ?? []));
+      }
       const livingByPerson = new Map(privacy.map((p) => [p.person_id, p.is_living]));
 
       setRows(personas.map((p) => ({ ...p, is_living: livingByPerson.get(p.person_id) ?? null })));
