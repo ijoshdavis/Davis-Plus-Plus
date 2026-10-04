@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Nav } from "../nav";
 import { birthYear, primaryName, sex } from "@/lib/gedcom";
 import { supabase } from "@/lib/supabase";
+import { DEFAULT_PAGE_SIZE, fetchAllPages } from "@/lib/supabasePaging";
 import { useRequireSession } from "@/lib/useSession";
 
 type Row = {
@@ -17,29 +18,6 @@ type Row = {
   is_living: boolean | null;
 };
 
-// Supabase's PostgREST caps every response at 1,000 rows server-side
-// regardless of a client-requested .limit() - confirmed directly against
-// this project (content-range: 0-999/*). With ~3,135 personas, a single
-// query silently drops two-thirds of the table. Page through with .range()
-// instead, ordered by a unique column so pages don't skip/duplicate rows.
-const PAGE_SIZE = 1000;
-
-async function fetchAllPages<T>(
-  query: (from: number, to: number) => PromiseLike<{ data: T[] | null; error: unknown }>
-): Promise<T[]> {
-  const all: T[] = [];
-  for (let from = 0; ; from += PAGE_SIZE) {
-    const { data, error } = await query(from, from + PAGE_SIZE - 1);
-    if (error) {
-      console.error(error);
-      break;
-    }
-    all.push(...(data ?? []));
-    if (!data || data.length < PAGE_SIZE) break;
-  }
-  return all;
-}
-
 export default function PeoplePage() {
   const session = useRequireSession();
   const [rows, setRows] = useState<Row[] | null>(null);
@@ -49,7 +27,7 @@ export default function PeoplePage() {
   useEffect(() => {
     if (!session) return;
     (async () => {
-      const personas = await fetchAllPages<Omit<Row, "is_living">>((from, to) =>
+      const personas = await fetchAllPages<Omit<Row, "is_living">>(DEFAULT_PAGE_SIZE, (from, to) =>
         supabase
           .from("persona")
           .select("id, person_id, tree_id, external_xref, raw")
@@ -59,13 +37,15 @@ export default function PeoplePage() {
       );
 
       const personIds = [...new Set(personas.map((p) => p.person_id))];
-      const privacy = await fetchAllPages<{ person_id: string; is_living: boolean }>((from, to) =>
-        supabase
-          .from("person_privacy")
-          .select("person_id, is_living")
-          .in("person_id", personIds)
-          .order("person_id")
-          .range(from, to)
+      const privacy = await fetchAllPages<{ person_id: string; is_living: boolean }>(
+        DEFAULT_PAGE_SIZE,
+        (from, to) =>
+          supabase
+            .from("person_privacy")
+            .select("person_id, is_living")
+            .in("person_id", personIds)
+            .order("person_id")
+            .range(from, to)
       );
       const livingByPerson = new Map(privacy.map((p) => [p.person_id, p.is_living]));
 

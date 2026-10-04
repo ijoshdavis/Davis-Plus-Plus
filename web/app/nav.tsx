@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 
+import { IdentityPicker } from "./identity-picker";
 import { supabase } from "@/lib/supabase";
 
 export function Nav() {
@@ -13,18 +14,21 @@ export function Nav() {
       <Link href="/people" className="text-slate-600 hover:text-slate-900">
         People
       </Link>
+      <Link href="/graph" className="text-slate-600 hover:text-slate-900">
+        Graph
+      </Link>
       <Link href="/findings" className="text-slate-600 hover:text-slate-900">
         Findings
       </Link>
       <Link href="/actions" className="text-slate-600 hover:text-slate-900">
         Actions
       </Link>
-      <button
-        onClick={() => supabase.auth.signOut()}
-        className="ml-auto text-slate-500 hover:text-slate-900"
-      >
-        Sign out
-      </button>
+      <div className="ml-auto flex items-center gap-3">
+        <IdentityPicker />
+        <button onClick={() => supabase.auth.signOut()} className="text-slate-500 hover:text-slate-900">
+          Sign out
+        </button>
+      </div>
     </nav>
   );
 }
